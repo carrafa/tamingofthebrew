@@ -1,6 +1,6 @@
 console.log('to beer or not to beer');
 
-var testTasteMap = {
+var tasteMap = {
   crisp: 10,
   hop: 8,
   nut: 1,
@@ -13,7 +13,7 @@ var testTasteMap = {
   sour: 7
 }
 
-function testCompare(){
+function compare(){
   $.ajax({
     method: 'get',
     url: '/api/beers/compare', 
@@ -24,7 +24,19 @@ function testCompare(){
   });
 }
 
+$('#submit-button').on('click', function(){
+   compare();
+});
+
 
 $('input').on('input', function(){
-// stuff in here
+  var value = $(this).val();
+  var name = $(this).attr('name');
+  tasteMap[name] = value;
+  renderTheWheelThing(tasteMap);
 });
+
+
+function renderTheWheelThing(tasteMap){
+ 
+}
