@@ -48,7 +48,12 @@ button {
     fill: #FFD700;
     stroke: none;
   }
-  
+
+  .draggable {
+    margin-left: 30%;
+    width: 60%;
+  }
+
 form {
   display: inline-block;
 }
