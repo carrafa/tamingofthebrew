@@ -72,6 +72,11 @@ form {
     font-size: 30px;
   }
 
+  .draggable {
+    margin-left: 13%;
+    width: 75%;
+  }
+
 }
 
 
@@ -85,6 +90,11 @@ form {
 
   button {
     font-size: 30px;
+  }
+
+  .draggable {
+    margin-left: 13%;
+    width: 75%;
   }
 
 
