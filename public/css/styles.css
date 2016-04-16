@@ -1,16 +1,20 @@
 body{
   margin: 0;
-  background-color: linen;
+  background-color: #F8AC60;
 }
 
 h1 {
   padding: 15px;
-  font-size: 30px;
+  font-size: 55px;
+  border-style: dotted;
+  display: inline-block;
+  background-color: rgb(168, 190, 255);
 }
 
 div {
   display: block;
   padding: 10px;
+  font-size: 25px;
 }
 
 div#container {
@@ -19,7 +23,7 @@ div#container {
 
 h2, h3, h4, p, a {
   padding: 15px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 a {
