@@ -24,10 +24,6 @@ $('input').on('input', function(){
   console.log(value);
   dataSet.axes = value;
 
-  console.log(dataSet);
-  makeChart(dataSet)
-});
-
 
 function makeChart(data){
 
