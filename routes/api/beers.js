@@ -14,10 +14,10 @@ router.get('/', function(req, res){
 router.get('/compare', function(req, res){
   var tasteMap = req.query;
   beerCompare(tasteMap, function(matches){
-   res.json({
-     beers:  matches
+    res.json({
+     beers: matches
     });
-  })
+  });
 });
 
-module.exports = router
+module.exports = router;
