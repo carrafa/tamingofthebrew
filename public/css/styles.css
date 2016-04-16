@@ -3,6 +3,11 @@ body{
   background-color: linen;
 }
 
+h1 {
+  padding: 15px;
+  font-size: 30px;
+}
+
 div {
   display: block;
   padding: 10px;
@@ -12,7 +17,7 @@ div#container {
   position: center;
 }
 
-h1, h2, h3, h4, p, a {
+h2, h3, h4, p, a {
   padding: 15px;
   font-size: 20px;
 }
@@ -24,6 +29,23 @@ h2.instruct {
 button {
   font-size: 25px;
 }
+
+/*Minimal CHART*/
+ .radar-chart .area {
+    fill-opacity: 0.7;
+  }
+  .radar-chart.focus .area {
+    fill-opacity: 0.3;
+  }
+  .radar-chart.focus .area.focused {
+    fill-opacity: 0.9;
+  }
+  .area.flavors, .flavors .circle {
+    fill: #FFD700;
+    stroke: none;
+  }
+  
+
 
 /*#############################*/
 /*Media Queries*/
