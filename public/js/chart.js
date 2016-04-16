@@ -1,76 +1,82 @@
 
-var dataSet = [
-        {
-          className: 'flavors',
-          axes: [
-            {axis: "crisp", value: $('#crisp').val()},
-            {axis: "hop", value: $('#hop').val()},
-            {axis: "nut", value: $('#nut').val()},
-            {axis: "fruit", value: $('#fruit').val()},
-            {axis: "cream", value: $('#cream').val()},
-            {axis: "dry", value: $('#dry').val()},
-            {axis: "sweet", value: $('#sweet').val()},
-            {axis: "bitter", value: $('#bitter').val()},
-            {axis: "spicy", value: $('#spicy').val()},
-            {axis: "sour", value: $('#sour').val()}
 
-          ]
-        }
-      ];
 $('input').on('input', function(){
   var value = $(this).val();
   var name = $(this).attr('name');
   console.log(name)
   console.log(value);
-  dataSet.axes = value;
+  // dataSet.axes = value;
+  console.log(dataSet);
+  var dataSet = [
+          {
+            className: 'flavors',
+            axes: [
+              {axis: "crisp", value: $('#crisp').val()},
+              {axis: "hop", value: $('#hop').val()},
+              {axis: "nut", value: $('#nut').val()},
+              {axis: "fruit", value: $('#fruit').val()},
+              {axis: "cream", value: $('#cream').val()},
+              {axis: "dry", value: $('#dry').val()},
+              {axis: "sweet", value: $('#sweet').val()},
+              {axis: "bitter", value: $('#bitter').val()},
+              {axis: "spicy", value: $('#spicy').val()},
+              {axis: "sour", value: $('#sour').val()}
 
+            ]
+          }
+        ];
+  $('#chart-area').empty();
+  makeChart(dataSet);
+});
 
 function makeChart(data){
 
-  RadarChart.defaultConfig.color = function() {};
-  RadarChart.defaultConfig.radius = 3;
-  RadarChart.defaultConfig.w = 400;
-  RadarChart.defaultConfig.h = 400;
+  // RadarChart.defaultConfig.color = function() {};
+  // RadarChart.defaultConfig.radius = 3;
+  // RadarChart.defaultConfig.w = 400;
+  // RadarChart.defaultConfig.h = 400;
 
   var selectedElement = 0;
   var currentX = 0;
   var currentY = 0;
   var currentMatrix = 0;
 
-  function selectElement(evt) {
+  // function selectElement(evt) {
+  //
+  //   selectedElement = evt.target;
+  //   currentX = evt.clientX;
+  //   currentY = evt.clientY;
+  //   currentMatrix = selectedElement.getAttributeNS(null, "transform").slice(7,-1).split(' ');
+  //     for(var i=0; i<currentMatrix.length; i++) {
+  //     currentMatrix[i] = parseFloat(currentMatrix[i]);
+  //
+  // }
+  //   selectedElement.setAttributeNS(null, "onmousemove", "moveElement(evt)");
+  // }
 
-    selectedElement = evt.target;
-    currentX = evt.clientX;
-    currentY = evt.clientY;
-    currentMatrix = selectedElement.getAttributeNS(null, "transform").slice(7,-1).split(' ');
-      for(var i=0; i<currentMatrix.length; i++) {
-      currentMatrix[i] = parseFloat(currentMatrix[i]);
-
-  }
-    selectedElement.setAttributeNS(null, "onmousemove", "moveElement(evt)");
-  }
 
 
-
-        function randomDataset() {
-          return data.map(function(d) {
-            return {
-              className: d.className,
-              axes: d.axes.map(function(axis) {
-                return {axis: axis.axis, value: axis.value};
-              })
-            };
-          });
-        }
+    function randomDataset() {
+      return data.map(function(d) {
+        return {
+          className: d.className,
+          axes: d.axes.map(function(axis) {
+            return {axis: axis.axis, value: axis.value};
+          })
+        };
+      });
+    }
 
   var chart = RadarChart.chart();
   var cfg = chart.config(); // retrieve default config
   var svg = d3.select('#chart-area').append('svg')
-  .attr('class', 'draggable')
-  .attr('onmousedown', 'selectElement(evt)')
   .attr('width', cfg.w + cfg.w + 50)
   .attr('height', cfg.h + cfg.h / 4);
-  svg.append('g').classed('single', 1).datum(randomDataset()).call(chart);
+  svg.append('g').classed('single', 1)
+  .datum(randomDataset())
+  .attr('class', 'draggable')
+  .attr('onmousedown', 'selectElement(evt)')
+  .call(chart);
 
 
 
@@ -99,7 +105,7 @@ function makeChart(data){
     h: 600,
     factor: 0.95,
     factorLegend: 1,
-    levels: 3,
+    levels: 2,
     maxValue: 0,
     minValue: 0,
     radians: 2 * Math.PI,
