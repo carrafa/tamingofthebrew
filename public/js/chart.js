@@ -1,35 +1,32 @@
 
+var dataSet = [
+        {
+          className: 'flavors',
+          axes: [
+            {axis: "crisp", value: $('#crisp').val()},
+            {axis: "hop", value: $('#hop').val()},
+            {axis: "nut", value: $('#nut').val()},
+            {axis: "fruit", value: $('#fruit').val()},
+            {axis: "cream", value: $('#cream').val()},
+            {axis: "dry", value: $('#dry').val()},
+            {axis: "sweet", value: $('#sweet').val()},
+            {axis: "bitter", value: $('#bitter').val()},
+            {axis: "spicy", value: $('#spicy').val()},
+            {axis: "sour", value: $('#sour').val()}
 
+          ]
+        }
+      ];
 $('input').on('input', function(){
   var value = $(this).val();
   var name = $(this).attr('name');
   console.log(name)
   console.log(value);
-  tasteMap[name] = value;
-  renderTheWheelThing(tasteMap);
+  dataSet.axes = value;
+
+  console.log(dataSet);
+  makeChart(dataSet)
 });
-
-
-var data = [
-        {
-          className: 'flavors',
-          axes: [
-            {axis: "crisp", value: 3},
-            {axis: "hop", value: 3},
-            {axis: "nut", value: 3},
-            {axis: "fruit", value: 1},
-            {axis: "cream", value: 4},
-            {axis: "dry", value: 2},
-            {axis: "sweet", value: 3},
-            {axis: "bitter", value: 5},
-            {axis: "spicy", value: 3},
-            {axis: "sour", value: 7}
-
-          ]
-        }
-      ];
-
-
 
 
 function makeChart(data){
@@ -72,7 +69,7 @@ function makeChart(data){
 
   var chart = RadarChart.chart();
   var cfg = chart.config(); // retrieve default config
-  var svg = d3.select('body').append('svg')
+  var svg = d3.select('#chart-area').append('svg')
   .attr('class', 'draggable')
   .attr('onmousedown', 'selectElement(evt)')
   .attr('width', cfg.w + cfg.w + 50)
