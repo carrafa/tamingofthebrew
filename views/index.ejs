@@ -18,19 +18,19 @@
 
       <h2 class="instruct">How To Use This App</h2>
         <p>Identify your beer preferences with the chart below. <br/>Select the flavors you love most and enjoy the perfect brew.</p>
-        
+
           <!-- flavor wheel  -->
 
       <div id="container">
-          
+
         <script src="http://d3js.org/d3.v3.js"></script>
         <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
-        <script src="/js/chart.js"></script>
+
 
       <div data-role="main" class="ui-content">
       <form method="post">
       <ul>
-        
+
         <!-- ui-slider-handle ui-btn ui-shadow -->
 
         <li><label for="crisp">Crisp:</label>
@@ -38,7 +38,7 @@
           <input type="range" data-popup-enabled="true"> -->
           <input type="range" data-popup-enabled="true" name="crisp" id="crisp" value="5" min="0" max="10">
         </li>
-        
+
         <li><label for="hop">Hop:</label>
           <input type="range" name="hop" id="hop" value="5" min="0" max="10">
         </li>
@@ -74,14 +74,14 @@
         <input type="range" name="sour" id="sour" value="5" min="0" max="10">
         </li>
 
-      </ul> 
-        <button type="submit" data-inline="true">Brew Me</button> 
-      
+      </ul>
+        <button type="submit" data-inline="true">Brew Me</button>
+
       </form>
     </div>
   </div>
 
-       
+
     </center>
 
     <!-- Results -->
@@ -90,15 +90,16 @@
 
       <h3>Based on that criteria, We suggest the following:</h3>
       <div>
-        <div class="beer">Beer: </div> 
-        <div class="brewery">Brewery: </div> 
-        <div class="tatse">Taste: </div> 
-        <div class="calories">Calories: </div> 
-        <div class="abv">ABV: </div> 
-        <div class="ibu">IBU: </div> 
+        <div class="beer">Beer: </div>
+        <div class="brewery">Brewery: </div>
+        <div class="tatse">Taste: </div>
+        <div class="calories">Calories: </div>
+        <div class="abv">ABV: </div>
+        <div class="ibu">IBU: </div>
       </div>
     </center>
 
+  <script src="/js/chart.js"></script>
     <script src="/js/scripts.js"></script>
 
   </body>

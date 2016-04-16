@@ -6,7 +6,7 @@ var tasteMap = {
   nut: 1,
   fruit: 3,
   cream: 5,
-  dry: 5, 
+  dry: 5,
   sweet: 4,
   bitter: 1,
   spicy: 8,
@@ -16,7 +16,7 @@ var tasteMap = {
 function compare(){
   $.ajax({
     method: 'get',
-    url: '/api/beers/compare', 
+    url: '/api/beers/compare',
     data: testTasteMap,
     success: function(response){
       console.log(response);
@@ -32,11 +32,12 @@ $('#submit-button').on('click', function(){
 $('input').on('input', function(){
   var value = $(this).val();
   var name = $(this).attr('name');
+  // console.log($(this)[0].id + value);
   tasteMap[name] = value;
   renderTheWheelThing(tasteMap);
 });
 
 
 function renderTheWheelThing(tasteMap){
- 
+
 }
