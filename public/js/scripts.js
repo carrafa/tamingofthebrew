@@ -19,7 +19,11 @@ function compare(){
     url: '/api/beers/compare', 
     data: tasteMap,
     success: function(response){
-      console.log(response);
+      var beers = response.beers;
+      console.log(beers);
+      for(var i = 0; i < beers.length; i++){
+        renderABeer(beers[i]);
+      }
     }
   });
 }
@@ -40,4 +44,17 @@ $('input').on('input', function(){
 
 function renderTheWheelThing(tasteMap){
 
+}
+
+function renderABeer(beer){
+  var $beerContainer = $('<div>').addClass('beer-container');
+  var $beerName = $('<div>').addClass('beer-name').text(beer.name); 
+  var $brewery = $('<div>').addClass('brewery').text(beer.brewery); 
+  var $abv = $('<div>').addClass('abv').text(beer.nutritional_value.abv); 
+  var $ibu = $('<div>').addClass('ibu').text(beer.nutritional_value.ibu); 
+  var $calories = $('<div>').addClass('calories').text(beer.nutritional_value.calories); 
+  var $delivery = $('<button>').addClass('delivery').attr('search', beer.name).text('get this delivered!');
+
+  $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $delivery);
+  $('.beers-container').append($beerContainer);
 }
