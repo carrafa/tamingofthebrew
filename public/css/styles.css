@@ -45,7 +45,9 @@ button {
     stroke: none;
   }
   
-
+form {
+  display: inline-block;
+}
 
 /*#############################*/
 /*Media Queries*/
