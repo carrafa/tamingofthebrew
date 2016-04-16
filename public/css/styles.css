@@ -2,3 +2,48 @@ body{
   margin: 0;
   background-color: linen;
 }
+
+div {
+  display: block;
+}
+
+h1, h2, h3, h4, p {
+  padding: 15px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 25px;
+}
+
+/*#############################*/
+/*Media Queries*/
+/*#############################*/
+/*iPhone 5*/
+@media screen and (max-width: 600px) {
+
+  h1, h2, h3, h4, p {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 30px;
+  }
+
+}
+
+
+
+/*iPhone 6*/
+@media screen and (max-width: 700px) {
+
+  h1, h2, h3, h4, p {
+    padding: 25px;
+  }
+
+  button {
+    font-size: 30px;
+  }
+
+
+}
