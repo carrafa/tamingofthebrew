@@ -15,9 +15,15 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // routes!
-app.get('/', function(req, res){
-  res.render('index');
-});
+
+var indexRouter = require('./routes/index.js');
+app.use('/', indexRouter);
+
+var beerApi = require('./routes/api/beers.js');
+app.use('/api/beers', beerApi);
+
+var usersApi = require('./routes/api/users.js');
+app.use('/api/users', usersApi);
 
 // listen!
 var port = 8080;
