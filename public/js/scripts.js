@@ -16,8 +16,8 @@ var tasteMap = {
 function compare(){
   $.ajax({
     method: 'get',
-    url: '/api/beers/compare',
-    data: testTasteMap,
+    url: '/api/beers/compare', 
+    data: tasteMap,
     success: function(response){
       console.log(response);
     }
