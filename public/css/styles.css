@@ -5,11 +5,20 @@ body{
 
 div {
   display: block;
+  padding: 10px;
 }
 
-h1, h2, h3, h4, p {
+div#container {
+  position: center;
+}
+
+h1, h2, h3, h4, p, a {
   padding: 15px;
   font-size: 20px;
+}
+
+h2.instruct {
+  padding: 0px;
 }
 
 button {
