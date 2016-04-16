@@ -5,7 +5,7 @@ var beerSchema = mongoose.Schema({
   brewery: { type: String },
   taste: {
     crisp: { type: Number },
-    hop: { type:Number },
+    hop: { type: Number },
     nut: { type: Number },
     fruit: { type: Number },
     cream: { type: Number },
@@ -22,7 +22,6 @@ var beerSchema = mongoose.Schema({
   }
 }, {
   timestamps: true
-  }
 });
 
 module.exports = mongoose.model('Beer', beerSchema);
