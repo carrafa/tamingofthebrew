@@ -295,7 +295,7 @@ button:hover {
     width: 100%;
     overflow: scroll;
     margin-bottom: -80%;
-    margin-top: 130%;
+    margin-top: 100%;
   }
 
   #main-title {
@@ -303,7 +303,7 @@ button:hover {
   }
 
   div#chart {
-    /*margin-top: 40%;*/
+    margin-top: -50%;
   }
 
   #first, #second {
@@ -396,12 +396,12 @@ button:hover {
     width: 100%;
     overflow: scroll;
     margin-bottom: -80%;
-    margin-top: 130%;
+    margin-top: 100%;
   }
 
 
   div#chart {
-    /*margin-top: 40%;*/
+    margin-top: -50%;
   }
 
   #first, #second {
