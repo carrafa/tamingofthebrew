@@ -39,8 +39,36 @@ function seedDb(){
   }
 }
 
-//clearDb();
+var guinness = {
+  name : "Guinness",
+  brewery : "Guinness",
+  taste : {
+    bitter: 6,
+    cream: 8,
+    crisp: 8,
+    dry: 3,
+    fruit: 6,
+    hop: 5,
+    nut: 7,
+    sour: 4,
+    spicy: 2,
+    sweet: 5
+  },
+  nutritional_value : {
+    abv: 4,
+    ibu: 4,
+    calories: 127
+  }
+}
+
+function makeDefaultBeer(beer){
+  var newBeer = new Beer(beer);
+  newBeer.save();
+}
+
+clearDb();
 seedDb();
+makeDefaultBeer(guinness);
 setTimeout(function(){
   mongoose.disconnect();
 }, 10000);
