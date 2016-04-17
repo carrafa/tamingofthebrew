@@ -1,5 +1,6 @@
 body{
   box-sizing: border-box;
+  font-family: futura;
 }
 
 .container{
@@ -18,13 +19,29 @@ body{
     position: absolute;    /* create positioning context for svg */
 }
 
+#beer-me{
+  height: 0;
+  width: 15%;    /* specify any width you want (a percentage value, basically) */
+
+  /* apply a padding using the following formula */
+  /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+  position: absolute;
+  margin-top: -18%;
+  margin-left: 92%;
+
+}
+path.beer-icon:hover{
+  cursor: pointer;
+  fill: #ED6939;
+}
+
+
 path.brew{
   -webkit-animation: dash 4s linear forwards;
   animation: dash 4s linear forwards;
   animation-delay: 1.5s;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
-
 }
 
 @-webkit-keyframes dash {
@@ -48,6 +65,12 @@ path.brew{
   position: absolute;
   background-color: #ED6939;
 
+}
+
+.beer-list-head{
+  font-size: 2em;
+  text-align: center;
+  color: #2D2A73;
 }
 
 #scroll{
@@ -78,9 +101,14 @@ svg{
   position: absolute;
   display: flex;
   flex-direction: row;
-
 }
-
+.a-beer-container{
+  border: 1px solid #2D2A73;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  position: relative;
+}
 
 #left {
   width: 50%;
@@ -104,6 +132,8 @@ svg{
   margin-left: 10%;
   width: 40%;
   overflow: scroll;
+  text-align: center;
+  color: #2D2A73;
 }
 
 

@@ -8,7 +8,7 @@ $(document).ready(function(){
   $("#scroll").click(function() {
       $('html,body').animate({
           scrollTop: $("#second").offset().top},
-          1500);
+          1000);
   });
 
 })
@@ -61,11 +61,15 @@ function compare(){
         notSlideyOne.draw('#a' + beers[i]._id, dd, 300, 300);
      }
      setMoreInfoHandler();
+
+    $('.beer-list-head').text("BEER LIST");;
     }
   });
+
 }
 
-$('#submit-button').on('click', function(){
+$('#beer-me').on('click', function(){
+
    compare();
 });
 
@@ -119,6 +123,7 @@ function renderABeer(beer){
   var context = beer;
   var template = Handlebars.compile(source);
   var $beerContainer = template(context);
+
   $('#beers-holster').append($beerContainer);
 }
 
