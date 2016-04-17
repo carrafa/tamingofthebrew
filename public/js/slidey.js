@@ -1,17 +1,15 @@
-
-
 var sierra = {
-bitter: 6,
-cream: 8,
-crisp: 10,
-dry: 3,
-fruit: 6,
+bitter: 5,
+cream: 5,
+crisp: 5,
+dry: 8,
+fruit: 5,
 hop: 5,
-nut: 7,
-sour: 4,
-spicy: 2,
+nut: 5,
+sour: 5,
+spicy: 5,
 sweet: 5
-}
+};
 
 
 var d = [
@@ -51,11 +49,16 @@ var RadarChartSlidey = {
       w: w,
       h: h,
       factor: 1,    // 框的縮放比例
-      factorLegend: .85,
+      factorLegend: 0.85,
       levels: 10,    // 幾層框
       maxValue: 10,
       radians: 2 * Math.PI,
-      opacityArea: 0.5,
+      labelFactor: 0.3,   //How much farther than the radius of the outer circle should the labels be
+      opacityArea: 0.35, 	//The opacity of the area of the blob
+      dotRadius: 1, 			//The size of the colored circles of each blog
+      opacityCircles: 0.50, 	//The opacity of the fill when hovering over the circles
+      strokeWidth: 2, 		//The width of the stroke around each blob
+      roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
       color: d3.scale.category10()
     };
     if('undefined' !== typeof options){
@@ -65,6 +68,8 @@ var RadarChartSlidey = {
         }
       }
     }
+
+
 
     cfg.maxValue = Math.max(cfg.maxValue, d3.max(d.map(function(o){return o.value})));
     var allAxis = (d.map(function(i, j){return i.axis}));
@@ -143,7 +148,8 @@ var RadarChartSlidey = {
                 .enter()
                 .append("polygon")
                 .attr("class", "radar-chart-serie0")
-                .style("stroke-width", "2px")
+                .style("stroke-width", "5px")
+                .style("roundStrokes", "true")
                 .style("stroke", cfg.color(0))
                 .on('mouseover', function (d){
                   z = "polygon."+d3.select(this).attr("class");
