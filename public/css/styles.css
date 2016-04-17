@@ -109,6 +109,7 @@ svg{
 
   margin-top: 0px;
   padding-top: 2%;
+  padding-right: 5%;
 
 }
 #second {
@@ -262,13 +263,30 @@ button:hover {
   body {
     background-color: #ED6939;
   }
+  div.a-beer-container {
+    width: 35%;
+    display: block;
+    margin-top: 5%;
+    margin-right: 5%;
+    /*position: relative;*/
+    /*padding: 30%;*/
+    /*text-align: center;*/
+  }
+
+  #beers-holster {
+    margin-left: -48%;
+    width: 100%;
+    overflow: scroll;
+    margin-bottom: -80%;
+    margin-top: 110%;
+  }
 
   #main-title {
-    padding-bottom: 16%;
+    padding-bottom: 40%;
   }
 
   div#chart {
-    margin-top: 60%;
+    margin-top: 40%;
   }
 
   #first, #second {
@@ -278,7 +296,7 @@ button:hover {
   #second {
     margin-top: 1260px;
     padding-top: 45%;
-    padding-bottom: 30%;
+    padding-bottom: 60%;
   }
 
   #header {
@@ -287,7 +305,7 @@ button:hover {
   }
 
   svg {
-    margin-top: -15px;
+    margin-top: -70%;
     padding-top: 7%;
     margin-bottom: 7%;
     margin-left: 6%;
@@ -300,7 +318,7 @@ button:hover {
 
   button {
     font-size: 43px;
-    margin-left: 43%;
+    margin-left: 15%;
     margin-top: 10%;
   }
 
@@ -312,8 +330,16 @@ button:hover {
   }
 
   div.beer-name, .brewery, .abv, .ibu, .calories {
-    font-size: 30px;
-    padding: 5px;
+    font-size: 25px;
+    /*padding: 5px;*/
+  }
+
+  #beer-me {
+    height: 5px;
+    width: 35%;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 85%;
   }
 
   .legend {
@@ -328,8 +354,35 @@ button:hover {
     background-color: #ED6939;
   }
 
+  #beer-me {
+    height: 5px;
+    width: 35%;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 85%;
+  }
+
+  div.a-beer-container {
+    width: 35%;
+    display: block;
+    margin-top: 5%;
+    margin-right: 5%;
+    /*position: relative;*/
+    /*padding: 30%;*/
+    /*text-align: center;*/
+  }
+
+  #beers-holster {
+    margin-left: -48%;
+    width: 100%;
+    overflow: scroll;
+    margin-bottom: -80%;
+    margin-top: 110%;
+  }
+
+
   div#chart {
-    margin-top: 60%;
+    margin-top: 40%;
   }
 
   #first, #second {
@@ -339,11 +392,11 @@ button:hover {
   #second {
     margin-top: 1260px;
     padding-top: 45%;
-    padding-bottom: 30%;
+    padding-bottom: 60%;
   }
 
   #main-title {
-    padding-bottom: 16%;
+    padding-bottom: 40%;
   }
 
   h1, h2, h3, h4, p {
@@ -353,7 +406,7 @@ button:hover {
 
   button {
     font-size: 43px;
-    margin-left: 43%;
+    margin-left: 15%;
     margin-top: 10%;
   }
 
@@ -363,7 +416,7 @@ button:hover {
   }
 
   svg {
-    margin-top: -15px;
+    margin-top: -70%;
     padding-top: 7%;
     margin-bottom: 7%;
     margin-left: 6%;
