@@ -54,7 +54,7 @@
 
     <div id="second">
       <div id="left" class="section">
-        <div id="chart" style="margin-left:20%; margin-top:5%">
+        <div id="chart" >
           <span id="chart-area"></span>
           <button id="submit-button">Brew Me</button>
         </div>
@@ -69,8 +69,8 @@
 
 
 
-      <h2 class="instruct">What'll it be?</h2>
-        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most to enjoy the perfect brew.</p>
+      <!-- <h2 class="instruct">What'll it be?</h2>
+        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most to enjoy the perfect brew.</p> -->
 
           <!-- flavor wheel  -->
 
@@ -89,12 +89,6 @@
 
 
 
-    <!-- Results -->
-    <center class="hidden">
-      <h2>Try one of these:</h2>
-      <div class="beers-container"> </div>
-    </center>
-</div>
 
 
     <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
@@ -104,7 +98,7 @@
     <script src="/js/notSlidey.js"></script>
     <script src="/js/scripts.js"></script>
     <script id="beer-template"type="text/x-handlebars-template">
-      <div class="beer-container">
+      <div class="a-beer-container">
         <div class="beer-name">{{name}}</div>
         <div class="brewery">{{brewery}}</div>
         <div class="abv">{{nutritional_value.abv}}</div>

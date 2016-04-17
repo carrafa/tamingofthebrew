@@ -69,8 +69,6 @@ svg{
   padding-top: 2%;
 
 }
-
-
 #second {
   width: 100%;
   height: 850px;
@@ -80,15 +78,32 @@ svg{
   position: absolute;
 }
 
+
 #left {
-  width: 60%;
+  width: 50%;
   /*position: fixed;*/
 }
 
+#chart{
+  width: 80%;    /* specify any width you want (a percentage value, basically) */
+  margin-top: 5%;
+  margin-left:5%;
+  padding: 2%;
+  padding-right: 5%;
+  /* apply a padding using the following formula */
+  /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+  position: relative;    /* create positioning context for svg */
+}
+
+
 #beers-container{
+  margin-left: 60%;
   width: 40%;
   overflow: scroll;
+  position:relative;
 }
+
+
 
 .section{
   display: inline-block;
