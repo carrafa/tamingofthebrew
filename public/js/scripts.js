@@ -66,7 +66,7 @@ function moreInfoButton(search){
     method: 'get',
     url: '/api/beers/' + search,
     success: function(response){
-      var beer = response.beer.body.response.beer
+      var beer = response.beer.body.response.beer;
       renderMoreInfo(beer);
     },
     error: function(err){
