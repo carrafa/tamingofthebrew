@@ -2,24 +2,28 @@ console.log('to beer or not to beer');
 
 var DELIVERY_API = "https://www.delivery.com/api/data/search?search_type=alcohol&address=1006+Avenue+of+the+Americas,10018&order_time=ASAP&order_type=delivery&client_id=brewhacks2016&section=beer";
 
-var tasteMap = {
-  crisp: 5,
-  hop: 5,
-  nut: 5,
-  fruit: 5,
-  cream: 5,
-  dry: 5,
-  sweet: 5,
-  bitter: 5,
-  spicy: 5,
-  sour: 5
-};
+//var tasteMap = {
+  //crisp: 5,
+  //hop: 5,
+  //nut: 5,
+  //fruit: 5,
+  //cream: 5,
+  //dry: 5,
+  //sweet: 5,
+  //bitter: 5,
+  //spicy: 5,
+  //sour: 5
+//};
+//
+var tasteMap = {};
 
 function compare(){
+  var data = tellMe();
+  console.log(data);
   $.ajax({
     method: 'get',
     url: '/api/beers/compare',
-    data: tasteMap,
+    data: data,
     success: function(response){
       var beers = response.beers;
       console.log(beers);
