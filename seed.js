@@ -68,9 +68,9 @@ function makeDefaultBeer(beer){
 }
 
 clearDb();
-//for (var i = 0; i < 15; i++){
+for (var i = 0; i < 5; i++){
   seedDb();
-//}
+}
 makeDefaultBeer(honkers);
 setTimeout(function(){
   mongoose.disconnect();
