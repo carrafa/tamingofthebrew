@@ -279,23 +279,32 @@ button:hover {
     background-color: #ED6939;
   }
   div.a-beer-container {
-    width: 35%;
+    width: 87%;
     display: block;
-    margin-top: 5%;
+    margin-top: 13%;
     margin-right: 5%;
+    margin-left: 12%;
     /*position: relative;*/
     /*padding: 30%;*/
     /*text-align: center;*/
   }
 
-
-
-  #beers-holster {
-    margin-left: -48%;
+  div#right-side {
+    margin-top: 92%;
+    margin-left: -50%;
     width: 100%;
     overflow: scroll;
-    margin-bottom: -80%;
-    margin-top: 100%;
+    text-align: center;
+    color: #2D2A73;
+    height: 70%;
+  }
+
+  #beers-holster {
+    margin-left: -10%;
+    width: 80%;
+    overflow: scroll;
+    margin-bottom: 100%;
+    margin-top: -15%;
   }
 
   #main-title {
@@ -303,7 +312,7 @@ button:hover {
   }
 
   div#chart {
-    margin-top: -50%;
+    margin-top: 30%;
   }
 
   #first, #second {
@@ -325,7 +334,7 @@ button:hover {
     margin-top: -70%;
     padding-top: 7%;
     margin-bottom: 7%;
-    margin-left: 6%;
+    margin-left: 25%;
   }
 
   h1, h2, h3, h4, p {
@@ -379,29 +388,42 @@ button:hover {
     margin-left: 85%;
   }
 
+  /*.beer-list-head {
+    margin-top: 225%;
+  }*/
 
+  div#right-side {
+    margin-top: 92%;
+    margin-left: -50%;
+    width: 100%;
+    overflow: scroll;
+    text-align: center;
+    color: #2D2A73;
+    height: 70%;
+  }
 
   div.a-beer-container {
-    width: 35%;
+    width: 87%;
     display: block;
-    margin-top: 5%;
+    margin-top: 13%;
     margin-right: 5%;
+    margin-left: 12%;
     /*position: relative;*/
     /*padding: 30%;*/
     /*text-align: center;*/
   }
 
   #beers-holster {
-    margin-left: -48%;
-    width: 100%;
+    margin-left: -10%;
+    width: 80%;
     overflow: scroll;
-    margin-bottom: -80%;
-    margin-top: 100%;
+    margin-bottom: 100%;
+    margin-top: -15%;
   }
 
 
   div#chart {
-    margin-top: -50%;
+    margin-top: 30%;
   }
 
   #first, #second {
@@ -438,7 +460,7 @@ button:hover {
     margin-top: -70%;
     padding-top: 7%;
     margin-bottom: 7%;
-    margin-left: 6%;
+    margin-left: 25%;
   }
 
   div.beer-name, .brewery, .abv, .ibu, .calories {
