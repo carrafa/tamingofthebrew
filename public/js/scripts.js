@@ -2,6 +2,19 @@ console.log('to beer or not to beer');
 
 var DELIVERY_API = "https://www.delivery.com/api/data/search?search_type=alcohol&address=1006+Avenue+of+the+Americas,10018&order_time=ASAP&order_type=delivery&client_id=brewhacks2016&section=beer";
 
+$(document).ready(function(){
+  $(this).scrollTop(0);
+
+  $("#scroll").click(function() {
+      $('html,body').animate({
+          scrollTop: $("#second").offset().top},
+          1500);
+  });
+
+})
+
+
+
 //var tasteMap = {
   //crisp: 5,
   //hop: 5,
@@ -83,4 +96,4 @@ function renderABeer(beer){
   $('.beers-container').append($beerContainer);
 }
 
-RadarChartSlidey.draw('#chart-area', d, 600, 600);
+RadarChartSlidey.draw('#chart-area', d, 520, 520);

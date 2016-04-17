@@ -1,10 +1,48 @@
 body{
-  background-color: #F9D500;
+  box-sizing: border-box;
 }
 
 .container{
   width: 80%;
   margin-left: 10%;
+}
+
+#first{
+  width: 100%;
+  height: 870px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #ED6939;
+
+}
+
+#scroll{
+  margin-left: 45%;
+  margin-top: 28%;
+  width:7%;
+}
+
+
+
+#scroll:hover{
+  cursor: pointer;
+    fill: pink;
+}
+
+svg{
+  margin-top: -40px;
+  padding-top: 2%;
+}
+
+
+#second {
+    width: 100%;
+    height:900px;
+    left: 0;
+    margin-top: 840px;
+    background: rgb(244, 241, 231);
+    position: absolute;
 }
 
 #header{
