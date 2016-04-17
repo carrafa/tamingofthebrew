@@ -4,6 +4,11 @@
 
 ## Built by Joshua Carrafa, Ash Hofferber, Kyle Stengline, and Ethan Steiner.
 
+Joshua Carrafa - https://github.com/carrafa
+Ash Hofferber - https://github.com/ajhofferber
+Kyle Stengline - https://github.com/kylestengline
+Ethan Steiner - https://github.com/espa77
+
 
 Inspiration: Hard to try new beers or know if you will like them. Beer of choice not in stock/carried in store. Not knowing which beer to bring to a party.
 
