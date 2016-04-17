@@ -76,6 +76,9 @@ svg{
   margin-top: 780px;
   background: rgb(244, 241, 231);
   position: absolute;
+  display: flex;
+  flex-direction: row;
+
 }
 
 
@@ -96,11 +99,11 @@ svg{
 }
 
 
-#beers-container{
-  margin-left: 60%;
+#beers-holster{
+  /*margin-left: 60%;*/
+  margin-left: 10%;
   width: 40%;
   overflow: scroll;
-  position:relative;
 }
 
 
