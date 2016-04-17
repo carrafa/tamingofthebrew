@@ -60,7 +60,6 @@ function compare(){
      }
      setMoreInfoHandler();
 
-    $('.beer-list-head').text("BEER LIST");;
     }
   });
 

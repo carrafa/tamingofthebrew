@@ -13,7 +13,7 @@ body{
   display: none;
   font-family: 'Pacifico', cursive;
   color:white;
-  margin-top: 15%;
+  margin-top: 10%;
   font-size: 2em;
   text-align: center;
   -webkit-animation:fadein 2s;
@@ -153,7 +153,12 @@ svg{
 
 #beers-holster{
   /*margin-left: 60%;*/
-  margin-top: 10%;
+  width: 100%;
+
+}
+
+#right-side{
+  margin-top: 1%;
   margin-left: 10%;
   width: 40%;
   overflow: scroll;
@@ -283,9 +288,7 @@ button:hover {
     /*text-align: center;*/
   }
 
-  h1.map_taste {
-    padding-bottom: 50%;
-  }
+
 
   #beers-holster {
     margin-left: -48%;
@@ -376,9 +379,7 @@ button:hover {
     margin-left: 85%;
   }
 
-  h1.map_taste {
-    padding-bottom: 50%;
-  }
+
 
   div.a-beer-container {
     width: 35%;
