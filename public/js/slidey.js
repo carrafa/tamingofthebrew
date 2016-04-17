@@ -40,7 +40,7 @@ var d = [
       bitter : Math.round( d[7].value),
       spicy : Math.round( d[8].value),
       sour : Math.round( d[9].value)
-    }
+    };
     return tasteSearch;
   }
 
@@ -54,7 +54,9 @@ var RadarChartSlidey = {
       w: w,
       h: h,
       factor: 1,    // 框的縮放比例
-      factorLegend: .85,
+      factorLegend: 0.85,
+      labelFactor: 2,
+      dotRadius: 4,
       levels: 10,    // 幾層框
       maxValue: 10,
       radians: 2 * Math.PI,
@@ -69,8 +71,14 @@ var RadarChartSlidey = {
       }
     }
 
-    cfg.maxValue = Math.max(cfg.maxValue, d3.max(d.map(function(o){return o.value})));
-    var allAxis = (d.map(function(i, j){return i.axis}));
+    cfg.maxValue = Math.max(cfg.maxValue, d3.max(d.map(function(o){
+      return o.value;
+    })
+    ));
+    var allAxis = (d.map(function(i, j){
+      return i.axis;
+    })
+    );
     var total = allAxis.length;
     var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
 
@@ -121,7 +129,7 @@ var RadarChartSlidey = {
           .attr("class", "line").style("stroke", "grey").style("stroke-width", "1px");
 
       axis.append("text").attr("class", "legend")
-          .text(function(d){return d}).style("font-family", "sans-serif").style("font-size", "10px").attr("transform", function(d, i){return "translate(0, -10)";})
+          .text(function(d){return d}).style("font-family", "sans-serif").style("font-size", "18px").attr("transform", function(d, i){return "translate(0, -10)";})
           .attr("x", function(d, i){return cfg.w/2*(1-cfg.factorLegend*Math.sin(i*cfg.radians/total))-20*Math.sin(i*cfg.radians/total);})
           .attr("y", function(d, i){return cfg.h/2*(1-Math.cos(i*cfg.radians/total))+20*Math.cos(i*cfg.radians/total);});
     }
@@ -226,7 +234,7 @@ var RadarChartSlidey = {
       var maxY = w/2 - maxAxisValues[i].y;
 
       // 斜率為無限大的特殊情況
-      if(oldX == 0) {
+      if(oldX === 0) {
         newY = oldY - d3.event.dy;
         // 檢查是否超過範圍
         if(Math.abs(newY) > Math.abs(maxY)) {

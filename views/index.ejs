@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+  
   </head>
   <body>
 
@@ -51,23 +52,13 @@
 
 
       <h2 class="instruct">What'll it be?</h2>
-        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most to enjoy the perfect brew.</p>
+        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most to select the perfect alternative brew.</p>
 
           <!-- flavor wheel  -->
 
 
-
         <script src="http://d3js.org/d3.v3.js"></script>
         <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
-
-
-
-
-
-
-
-
-
 
 
     <!-- Results -->
@@ -77,10 +68,29 @@
     </center>
 </div>
 
+    <script src="/js/handlebars.js"></script>
     <script src="/js/remodal.js"></script>
     <script src="/js/slidey.js"></script>
     <script src="/js/notSlidey.js"></script>
     <script src="/js/scripts.js"></script>
+    <script id="beer-template"type="text/x-handlebars-template">
+      <div class="beer-container>
+        <div class="beer-name">{{name}}</div>
+        <div class="brewery">{{brewery}}</div>
+        <div class="abv">{{nutritional_value.abv}}</div>
+        <div class="ibu">{{nutritional_value.ibu}}</div>
+        <div class="calories">{{nutritional_value.calories}}</div>
+        <div id="{{tasteMapId}}"></div>
+        <button type="button" class="info" search="{{name}}">get more info!</button>
+      </div>
+    </script>
+    <script id="moreInfo-template"type="text/x-handlebars-template">
+      <h1>{{name}}<h1>
+      <img src="{{beer_label}}"/>
+      <div>{{abv}}</div>
+      <div>{{beer_style}}</div>
+      <div>{{beer_description}}</div>
+    </script>
 
   </body>
 </html>

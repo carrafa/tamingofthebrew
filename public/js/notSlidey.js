@@ -9,20 +9,20 @@ nut: 7,
 sour: 4,
 spicy: 2,
 sweet: 5
-}
+};
 
 
 var dd = [
-         {axis: "crisp", value: sierraNotSlidey['crisp'], order:0},
-         {axis: "hop", value: sierraNotSlidey['hop'], order:1},
-         {axis: "nut", value: sierraNotSlidey['nut'], order:2},
-         {axis: "fruit", value: sierraNotSlidey['fruit'], order:3},
-         {axis: "cream", value: sierraNotSlidey['cream'], order:4},
-         {axis: "dry", value: sierraNotSlidey['dry'], order:5},
-         {axis: "sweet", value: sierraNotSlidey['sweet'], order:6},
-         {axis: "bitter", value: sierraNotSlidey['bitter'], order:7},
-         {axis: "spicy", value: sierraNotSlidey['spicy'], order:8},
-         {axis: "sour", value: sierraNotSlidey['sour'], order:9}
+         {axis: "crisp", value: sierraNotSlidey.crisp, order:0},
+         {axis: "hop", value: sierraNotSlidey.hop, order:1},
+         {axis: "nut", value: sierraNotSlidey.nut, order:2},
+         {axis: "fruit", value: sierraNotSlidey.fruit, order:3},
+         {axis: "cream", value: sierraNotSlidey.cream, order:4},
+         {axis: "dry", value: sierraNotSlidey.dry, order:5},
+         {axis: "sweet", value: sierraNotSlidey.sweet, order:6},
+         {axis: "bitter", value: sierraNotSlidey.bitter, order:7},
+         {axis: "spicy", value: sierraNotSlidey.spicy, order:8},
+         {axis: "sour", value: sierraNotSlidey.sour, order:9}
         ];
 
 
@@ -34,7 +34,7 @@ var notSlideyOne = {
       w: w,
       h: h,
       factor: 1,    // 框的縮放比例
-      factorLegend: .85,
+      factorLegend: 0.85,
       levels: 10,    // 幾層框
       maxValue: 10,
       radians: 2 * Math.PI,
@@ -49,8 +49,12 @@ var notSlideyOne = {
       }
     }
 
-    cfg.maxValue = Math.max(cfg.maxValue, d3.max(dd.map(function(o){return o.value})));
-    var allAxis = (dd.map(function(i, j){return i.axis}));
+    cfg.maxValue = Math.max(cfg.maxValue, d3.max(dd.map(function(o){
+      return o.value;
+    })));
+    var allAxis = (dd.map(function(i, j){
+      return i.axis;
+    }));
     var total = allAxis.length;
     var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
 
@@ -156,7 +160,7 @@ var notSlideyOne = {
       g.selectAll(".nodes")
         .data(d).enter()
         .append("svg:circle").attr("class", "radar-chart-serie0")
-        .attr('r', cfg.radius)
+        .attr('r', cfg.radius/2)
         .attr("alt", function(j){return Math.max(j.value, 0);})
         .attr("cx", function(j, i){
           return cfg.w/2*(1-(Math.max(j.value, 0)/cfg.maxValue)*cfg.factor*Math.sin(i*cfg.radians/total));
@@ -179,7 +183,9 @@ var notSlideyOne = {
                     g.selectAll("polygon").transition(200).style("fill-opacity", cfg.opacityArea);
                   })
         .append("svg:title")
-        .text(function(j){return Math.max(j.value, 0)});
+        .text(function(j){
+          return Math.max(j.value, 0);
+        });
     }
 
     //Tooltip
