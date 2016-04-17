@@ -37,6 +37,11 @@ a:hover {
   -webkit-transition: all 1s;
 }
 
+circle:hover{
+  cursor: crosshair;
+}
+
+
 h2.instruct {
   padding: 0px;
 }
@@ -122,4 +127,3 @@ form {
     width: 75%;
   }
 }
-

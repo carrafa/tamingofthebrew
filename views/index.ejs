@@ -22,63 +22,13 @@
 
           <!-- flavor wheel  -->
 
-      <div id="container">
+      <div id="chart" style='margin-left:20%; margin-top:20%'>
 
         <script src="http://d3js.org/d3.v3.js"></script>
         <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
 
 
-      <div data-role="main" class="ui-content">
-        <form method="post">
-        <ul>
 
-        <!-- ui-slider-handle ui-btn ui-shadow -->
-
-          <li><label for="crisp">Crisp:</label>
-          <!-- <input type="range" data-show-value="true">
-          <input type="range" data-popup-enabled="true"> -->
-            <input type="range" data-popup-enabled="true" name="crisp" id="crisp" value="5" min="0" max="10">
-          </li>
-
-        <li><label for="hop">Hop:</label>
-          <input type="range" name="hop" id="hop" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="nut">Nut:</label>
-        <input type="range" name="nut" id="nut" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="fruit">Fruit:</label>
-        <input type="range" name="fruit" id="fruit" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="cream">Cream:</label>
-        <input type="range" name="cream" id="cream" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="dry">Dry:</label>
-        <input type="range" name="dry" id="dry" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="sweet">Sweet:</label>
-        <input type="range" name="sweet" id="sweet" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="bitter">Bitter:</label>
-        <input type="range" name="bitter" id="bitter" value="5" min="0" max="10"></li>
-
-        <li><label for="spicy">Spicy:</label>
-        <input type="range" name="spicy" id="spicy" value="5" min="0" max="10">
-        </li>
-
-        <li><label for="sour">Sour:</label>
-        <input type="range" name="sour" id="sour" value="5" min="0" max="10">
-        </li>
-
-      </ul>
-      <button type="submit" data-inline="true">Brew Me</button>
-      </form>
-    </div>
   </div>
     </center>
 
@@ -96,7 +46,8 @@
       <div class="beers-container"></div>
     </center>
 
-  <script src="/js/chart.js"></script>
+    <script src="/js/slidey.js"></script>
+    <script src="/js/notSlidey.js"></script>
     <script src="/js/scripts.js"></script>
 
   </body>
