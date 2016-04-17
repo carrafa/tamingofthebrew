@@ -2,7 +2,7 @@ var express     =    require('express');
 var app         =    express();
 
 // database!
-var mongoPath = process.env.MONGOLAB_URI || 'mongodb://localhost/brewhack';
+var mongoPath = process.env.MONGODB_URI || 'mongodb://localhost/brewhack';
 var mongoose = require('mongoose');
 mongoose.connect(mongoPath);
 
