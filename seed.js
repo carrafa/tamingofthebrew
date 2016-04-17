@@ -67,11 +67,11 @@ function makeDefaultBeer(beer){
   newBeer.save();
 }
 
-clearDb();
-for (var i = 0; i < 5; i++){
+//clearDb();
+for (var i = 0; i < 3; i++){
   seedDb();
 }
-makeDefaultBeer(honkers);
+//makeDefaultBeer(honkers);
 setTimeout(function(){
   mongoose.disconnect();
 }, 10000);
