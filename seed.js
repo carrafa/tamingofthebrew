@@ -37,9 +37,10 @@ function seedDb(){
     var newBeer = new Beer(beer);
     newBeer.save();
   }
+  console.log('beer');
 }
 
-var guinness = {
+var honkers = {
   name : "Honkers Ale",
   brewery : "Goose Island",
   taste : {
@@ -67,8 +68,10 @@ function makeDefaultBeer(beer){
 }
 
 clearDb();
-seedDb();
-makeDefaultBeer(guinness);
+for (var i = 0; i < 7; i++){
+  seedDb();
+}
+makeDefaultBeer(honkers);
 setTimeout(function(){
   mongoose.disconnect();
 }, 10000);
