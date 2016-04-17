@@ -26,11 +26,24 @@ body{
 
 #main-title{
   font-family: 'Pacifico', cursive;
-  font-size: 6em;
-
+  font-size: 4.5em;
+  color: #F94700;
+  animation-duration: 1.5s;
+  animation-name: slidein;
 }
 
 
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
 
 /*div {
   display: block;
