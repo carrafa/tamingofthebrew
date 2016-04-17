@@ -6,7 +6,7 @@ mongoose.connect(mongoPath);
 function Beer(name){
   this.name = name;
   this.brewery = name;
-  this.taste: {
+  this.taste = {
     crisp: Math.floor(Math.random() * 10),
     hop: Math.floor(Math.random() * 10),
     nut: Math.floor(Math.random() * 10),
@@ -18,7 +18,7 @@ function Beer(name){
     spicy: Math.floor(Math.random() * 10),
     sour: Math.floor(Math.random() * 10)
   }
-  this.nutritional_value: {
+  this.nutritional_value = {
     abv: Math.floor(Math.random() * 10),
     ibu: Math.floor(Math.random() * 10),
     calories: Math.floor(Math.random() * 10)

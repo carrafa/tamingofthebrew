@@ -1,5 +1,7 @@
 console.log('to beer or not to beer');
 
+var DELIVERY_API = "https://www.delivery.com/api/data/search?search_type=alcohol&address=1006+Avenue+of+the+Americas,10018&order_time=ASAP&order_type=delivery&client_id=brewhacks2016&section=beer";
+
 var tasteMap = {
   crisp: 10,
   hop: 8,
@@ -32,15 +34,30 @@ $('#submit-button').on('click', function(){
    compare();
 });
 
+function addDeliverySearchHandler(div){
+  var search = div.attr('search').toLowerCase();
+  div.on('click', function(){
+    deliverySearch(search);
+  });
+}
 
-$('input').on('input', function(){
+function deliverySearch(search){
+  $.ajax({
+    method: 'get',
+url: DELIVERY_API  + '&name=' + search,
+    success: function(response){
+      console.log(response);
+    }
+  });
+}
+
+$('input').on('input',  function(){
   var value = $(this).val();
   var name = $(this).attr('name');
   // console.log($(this)[0].id + value);
   tasteMap[name] = value;
   renderTheWheelThing(tasteMap);
 });
-
 
 function renderTheWheelThing(tasteMap){
 
@@ -54,6 +71,7 @@ function renderABeer(beer){
   var $ibu = $('<div>').addClass('ibu').text(beer.nutritional_value.ibu); 
   var $calories = $('<div>').addClass('calories').text(beer.nutritional_value.calories); 
   var $delivery = $('<button>').addClass('delivery').attr('search', beer.name).text('get this delivered!');
+  addDeliverySearchHandler($delivery);
 
   $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $delivery);
   $('.beers-container').append($beerContainer);
