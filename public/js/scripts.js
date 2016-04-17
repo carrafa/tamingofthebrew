@@ -84,6 +84,9 @@ function moreInfoButton(search){
     success: function(response){
       var beer = response.beer.body.response.beer
       renderMoreInfo(beer);
+    },
+    error: function(err){
+      console.log("ERROR: ", err); 
     }
   });
 }
@@ -91,7 +94,8 @@ function moreInfoButton(search){
 function renderMoreInfo(beer){
   var source = $('#moreInfo-template').html();
   var context = beer;
-  var template = Handlebars.compile(source);
+  beer.mapId = 'map' + beer._id;
+  var template = Handlebars.compile(source); 
   var $beerInfo = template(context);
   var $modal = $('<div>');
   $modal.append($beerInfo);
@@ -119,3 +123,23 @@ function renderABeer(beer){
 }
 
 RadarChartSlidey.draw('#chart-area', d, 520, 520);
+
+var map;
+
+function renderMap(latLng, id){
+  map = new google.maps.Map(document.getElementById('map' + id), {
+    center: {lat: latLng.lat, lng: latLng.lng},
+    zoom: 8
+  });
+  
+  var marker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    position: latLng,
+    title: name
+  });
+
+  marker.setMap(map);
+
+}
+
