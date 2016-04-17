@@ -42,28 +42,38 @@ h2.instruct {
 }
 
 button {
+  cursor: pointer;
   font-size: 25px;
+  -webkit-transition: all 1s;
+}
+
+button:hover {
+  color: rgba(93, 255, 243, 0.76);
+  -webkit-transition: all 1s;
 }
 
 /*Minimal CHART*/
- .radar-chart .area {
-    fill-opacity: 0.7;
-  }
-  .radar-chart.focus .area {
-    fill-opacity: 0.3;
-  }
-  .radar-chart.focus .area.focused {
-    fill-opacity: 0.9;
-  }
-  .area.flavors, .flavors .circle {
-    fill: #FFD700;
-    stroke: none;
-  }
+.radar-chart .area {
+  fill-opacity: 0.7;
+}
 
-  .draggable {
-    margin-left: 30%;
-    width: 60%;
-  }
+.radar-chart.focus .area {
+  fill-opacity: 0.3;
+}
+
+.radar-chart.focus .area.focused {
+  fill-opacity: 0.9;
+}
+
+.area.flavors, .flavors .circle {
+  fill: #FFD700;
+  stroke: none;
+}
+
+.draggable {
+  margin-left: 30%;
+  width: 60%;
+}
 
 form {
   display: inline-block;
@@ -72,41 +82,43 @@ form {
 /*#############################*/
 /*Media Queries*/
 /*#############################*/
-/*iPhone 5*/
-@media screen and (max-width: 600px) {
-
-  h1, h2, h3, h4, p {
-    padding: 25px;
-  }
-
-  button {
-    font-size: 30px;
-  }
-
-  .draggable {
-    margin-left: 13%;
-    width: 75%;
-  }
-
-}
-
-
-
 /*iPhone 6*/
 @media screen and (max-width: 700px) {
+  body {
+    border: 7px solid black;
+  }
 
   h1, h2, h3, h4, p {
-    padding: 25px;
+    padding: 30px;
   }
 
   button {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .draggable {
     margin-left: 13%;
     width: 75%;
   }
-
-
 }
+
+/*iPhone 5*/
+@media screen and (max-width: 600px) {
+  body {
+    border: 7px solid black;
+  }
+
+  h1, h2, h3, h4, p {
+    padding: 30px;
+  }
+
+  button {
+    font-size: 40px;
+  }
+
+  .draggable {
+    margin-left: 13%;
+    width: 75%;
+  }
+}
+
