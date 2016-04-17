@@ -116,40 +116,48 @@ button:hover {
 /*#############################*/
 /*iPhone 6*/
 @media screen and (max-width: 700px) {
-  body {
+  /*body {
     border: 7px solid black;
+  }*/
+
+  #header {
+    width: 125%;
+    height: 120px;
   }
 
   h1, h2, h3, h4, p {
-    padding: 30px;
+    padding: 25px;
+    font-size: 35px;
   }
 
   button {
-    font-size: 30px;
+    font-size: 43px;
+    margin-left: 42%;
+    margin-top: 10%;
   }
 
-  .draggable {
-    margin-left: 13%;
-    width: 75%;
-  }
 }
 
 /*iPhone 5*/
 @media screen and (max-width: 600px) {
   body {
-    border: 7px solid black;
+    /*border: 7px solid black;*/
   }
 
   h1, h2, h3, h4, p {
-    padding: 30px;
+    padding: 25px;
+    font-size: 35px;
   }
 
   button {
-    font-size: 30px;
+    font-size: 43px;
+    margin-left: 42%;
+    margin-top: 10%;
   }
 
-  .draggable {
-    margin-left: 13%;
-    width: 75%;
+  #header {
+    width: 125%;
+    height: 120px;
   }
+
 }
