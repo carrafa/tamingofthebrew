@@ -228,8 +228,13 @@ button {
   cursor: pointer;
   font-size: 25px;
   -webkit-transition: all 1s;
-  background-color: white;
+  border: 0;
+  border-radius: 5%;
+  background-color: #ED6939;
+  color: rgb(244, 241, 231);
 }
+
+
 
 button:hover {
   color: rgba(93, 255, 243, 0.76);
