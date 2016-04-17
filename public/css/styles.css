@@ -1,21 +1,42 @@
 body{
-  margin: 0;
-  background-color: #F8AC60;
+  background-color: #F9D500;
 }
 
-h1 {
-  padding: 15px;
-  font-size: 55px;
-  border-style: dotted;
-  display: inline-block;
-  background-color: rgb(168, 190, 255);
+.container{
+  width: 80%;
+  margin-left: 10%;
 }
 
-div {
+#header{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background:repeating-linear-gradient(
+  -45deg,
+  white,
+  white 5px,
+  black 5px,
+  black 10px
+);
+  position: absolute;
+  z-index: -1;
+
+}
+
+#main-title{
+  font-family: 'Pacifico', cursive;
+  font-size: 6em;
+
+}
+
+
+
+/*div {
   display: block;
   padding: 10px;
   font-size: 25px;
-}
+}*/
 
 div#container {
   position: center;
@@ -59,7 +80,7 @@ button:hover {
 }
 
 /*Minimal CHART*/
-.radar-chart .area {
+/*.radar-chart .area {
   fill-opacity: 0.7;
 }
 
@@ -74,16 +95,8 @@ button:hover {
 .area.flavors, .flavors .circle {
   fill: #FFD700;
   stroke: none;
-}
+}*/
 
-.draggable {
-  margin-left: 30%;
-  width: 60%;
-}
-
-form {
-  display: inline-block;
-}
 
 /*#############################*/
 /*Media Queries*/
