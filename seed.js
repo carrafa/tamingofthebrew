@@ -40,8 +40,8 @@ function seedDb(){
 }
 
 var guinness = {
-  name : "Guinness",
-  brewery : "Guinness",
+  name : "Honkers Ale",
+  brewery : "Goose Island",
   taste : {
     bitter: 6,
     cream: 8,
@@ -56,7 +56,7 @@ var guinness = {
   },
   nutritional_value : {
     abv: 4,
-    ibu: 4,
+    ibu: 30,
     calories: 127
   }
 }
