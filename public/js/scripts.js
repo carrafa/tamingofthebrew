@@ -22,7 +22,7 @@ function compare(){
     url: '/api/beers/compare',
     data: data,
     success: function(response){
-      $('.beers-container').empty();
+      $('#beers-holster').empty();
       var beers = response.beers;
       console.log(beers);
       for(var i = 0; i < 15; i++){
