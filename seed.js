@@ -68,7 +68,7 @@ function makeDefaultBeer(beer){
 }
 
 clearDb();
-for (var i = 0; i < 7; i++){
+for (var i = 0; i < 15; i++){
   seedDb();
 }
 makeDefaultBeer(honkers);
