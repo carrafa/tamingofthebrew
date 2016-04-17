@@ -18,9 +18,11 @@
   "homepage": "https://github.com/carrafa/tamingofthebrew#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "mongoose": "^4.4.12",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "unirest": "^0.4.2"
   }
 }
