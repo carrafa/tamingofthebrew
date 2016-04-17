@@ -76,7 +76,7 @@ function moreInfoButton(search){
         var beer = response.beer;
       }
       renderMoreInfo(beer, function(){
-        renderMap(latLng, beer.mapId);
+        renderMap(beer.brewery.location, beer.mapId);
       });
     },
     error: function(err){
