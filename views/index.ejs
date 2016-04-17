@@ -132,7 +132,7 @@
 
 
 
-    <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
     <script src="/js/handlebars.js"></script>
     <script src="/js/remodal.js"></script>
     <script src="/js/slidey.js"></script>
@@ -141,10 +141,10 @@
     <script id="beer-template"type="text/x-handlebars-template">
       <div class="a-beer-container">
         <div class="beer-name">{{name}}</div>
-        <div class="brewery">{{brewery}}</div>
-        <div class="abv">{{nutritional_value.abv}}</div>
-        <div class="ibu">{{nutritional_value.ibu}}</div>
-        <div class="calories">{{nutritional_value.calories}}</div>
+        <div class="brewery">Brewery:&nbsp{{brewery}}</div>
+        <div class="abv">ABV:&nbsp{{nutritional_value.abv}}%</div>
+        <div class="ibu">IBU:&nbsp{{nutritional_value.ibu}}</div>
+        <div class="calories">Calories per pint:&nbsp{{nutritional_value.calories}}</div>
         <div id="{{tasteMapId}}"></div>
         <button type="button" class="info" search="{{name}}">get more info!</button>
       </div>
@@ -152,10 +152,10 @@
    <script id="moreInfo-template"type="text/x-handlebars-template">
       <h1>{{name}}<h1>
       <img src="{{beer_label}}"/>
-      <div>{{abv}}</div>
+      <div>ABV:&nbsp{{abv}}</div>
       <div>{{beer_style}}</div>
       <div>{{beer_description}}</div>
-      <div id="{{mapId}}"></div>
+      <div id="{{mapId}}" class="map-container"></div>
     </script>
 
   </body>
