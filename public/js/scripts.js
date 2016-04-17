@@ -66,8 +66,14 @@ function moreInfoButton(search){
     method: 'get',
     url: '/api/beers/' + search,
     success: function(response){
-      var beer = response.beer.body.response.beer;
-      renderMoreInfo(beer);
+      if(response.beer.body){
+        var beer = response.beer.body.response.beer
+      }else{
+        var beer = response.beer;
+      }
+      renderMoreInfo(beer, function(){
+        renderMap(latLng, beer.mapId);
+      });
     },
     error: function(err){
       console.log("ERROR: ", err);
@@ -75,10 +81,10 @@ function moreInfoButton(search){
   });
 }
 
-function renderMoreInfo(beer){
+function renderMoreInfo(beer, callback){
   var source = $('#moreInfo-template').html();
   var context = beer;
-  beer.mapId = 'map' + beer._id;
+  beer.mapId = 'map' + beer.bid;
   var template = Handlebars.compile(source);
   var $beerInfo = template(context);
   var $modal = $('<div>');
@@ -87,12 +93,17 @@ function renderMoreInfo(beer){
   $('body').append($modal);
   var inst = $modal.remodal();
   inst.open();
+  var latLng = {
+    lat: beer.brewery.location.lat,
+    lng: beer.brewery.location.lng
+  }
+
+  callback(latLng, beer.mapId);
 }
 
 $('input').on('input',  function(){
   var value = $(this).val();
   var name = $(this).attr('name');
-  // console.log($(this)[0].id + value);
   tasteMap[name] = value;
   renderTheWheelThing(tasteMap);
 });
@@ -108,9 +119,8 @@ function renderABeer(beer){
 
 RadarChartSlidey.draw('#chart-area', d, 520, 520);
 
-var map;
-
 function renderMap(latLng, id){
+  var map;
   map = new google.maps.Map(document.getElementById('map' + id), {
     center: {lat: latLng.lat, lng: latLng.lng},
     zoom: 8
