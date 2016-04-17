@@ -29,8 +29,14 @@ function fillLetters(){
 var tasteMap = {};
 
 function compare(){
+  $('#beers-holster').empty();
   var data = tellMe();
-  console.log(data);
+  var $loading = $('<h1>').text('loading!!!');
+  var $img = $('<img>').attr('src', 'https://media.giphy.com/media/Hc0h9uo85TCQU/giphy.gif').css({
+    'width': '300px',
+    'margin-left': '-150px'
+  });
+  $('#beers-holster').append($img, $loading);
   $.ajax({
     method: 'get',
     url: '/api/beers/compare',
