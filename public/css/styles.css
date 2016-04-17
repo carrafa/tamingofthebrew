@@ -373,6 +373,11 @@ button:hover {
     padding-right: 2%;
   }
 
+  .brewcontainer {
+    margin-left: 27%;
+    margin-top: -22%;
+  }
+
 }
 
 /*iPhone 5*/
@@ -467,6 +472,11 @@ button:hover {
   div.beer-name, .brewery, .abv, .ibu, .calories {
     font-size: 30px;
     padding: 5px;
+  }
+
+  .brewcontainer {
+    margin-top: -22%;
+    margin-left: 27%;
   }
 
 }
