@@ -1,15 +1,17 @@
+
+
 var sierra = {
-bitter: 5,
-cream: 5,
-crisp: 5,
-dry: 8,
-fruit: 5,
+bitter: 6,
+cream: 8,
+crisp: 10,
+dry: 3,
+fruit: 6,
 hop: 5,
-nut: 5,
-sour: 5,
-spicy: 5,
+nut: 7,
+sour: 4,
+spicy: 2,
 sweet: 5
-};
+}
 
 
 var d = [
@@ -27,16 +29,19 @@ var d = [
 
 
   function tellMe(){
-    console.log("Crisp = " + Math.round( d[0].value)),
-      console.log("Hop = " + Math.round( d[1].value)),
-        console.log("Nut = " + Math.round( d[2].value)),
-          console.log("Fruit = " + Math.round(d[3].value)),
-            console.log("Cream = " + Math.round(d[4].value)),
-              console.log("Dry = " + Math.round(d[5].value)),
-                console.log("Sweet = " + Math.round(d[6].value)),
-                console.log("bitter = " + Math.round(d[7].value)),
-                console.log("Spicy = " + Math.round(d[8].value)),
-                console.log("Sour = " + Math.round(d[9].value))
+    var tasteSearch = {
+      crisp : Math.round( d[0].value),
+      hop : Math.round( d[1].value),
+      nut : Math.round( d[2].value),
+      fruit : Math.round( d[3].value),
+      cream : Math.round( d[4].value),
+      dry : Math.round( d[5].value),
+      sweet : Math.round( d[6].value),
+      bitter : Math.round( d[7].value),
+      spicy : Math.round( d[8].value),
+      sour : Math.round( d[9].value)
+    }
+    return tasteSearch;
   }
 
 
@@ -49,16 +54,11 @@ var RadarChartSlidey = {
       w: w,
       h: h,
       factor: 1,    // 框的縮放比例
-      factorLegend: 0.85,
+      factorLegend: .85,
       levels: 10,    // 幾層框
       maxValue: 10,
       radians: 2 * Math.PI,
-      labelFactor: 0.3,   //How much farther than the radius of the outer circle should the labels be
-      opacityArea: 0.35, 	//The opacity of the area of the blob
-      dotRadius: 1, 			//The size of the colored circles of each blog
-      opacityCircles: 0.50, 	//The opacity of the fill when hovering over the circles
-      strokeWidth: 2, 		//The width of the stroke around each blob
-      roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+      opacityArea: 0.5,
       color: d3.scale.category10()
     };
     if('undefined' !== typeof options){
@@ -68,8 +68,6 @@ var RadarChartSlidey = {
         }
       }
     }
-
-
 
     cfg.maxValue = Math.max(cfg.maxValue, d3.max(d.map(function(o){return o.value})));
     var allAxis = (d.map(function(i, j){return i.axis}));
@@ -148,8 +146,7 @@ var RadarChartSlidey = {
                 .enter()
                 .append("polygon")
                 .attr("class", "radar-chart-serie0")
-                .style("stroke-width", "5px")
-                .style("roundStrokes", "true")
+                .style("stroke-width", "2px")
                 .style("stroke", cfg.color(0))
                 .on('mouseover', function (d){
                   z = "polygon."+d3.select(this).attr("class");
