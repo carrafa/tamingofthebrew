@@ -66,7 +66,7 @@ function makeDefaultBeer(beer){
   newBeer.save();
 }
 
-//clearDb();
+clearDb();
 seedDb();
 makeDefaultBeer(guinness);
 setTimeout(function(){
