@@ -314,6 +314,14 @@ button:hover {
     /*padding: 5px;*/
   }
 
+  #beer-me {
+    height: 5px;
+    width: 30%;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 85%;
+  }
+
   .legend {
     padding-right: 2%;
   }
@@ -324,6 +332,14 @@ button:hover {
 @media screen and (max-width: 600px) {
   body {
     background-color: #ED6939;
+  }
+
+  #beer-me {
+    height: 5px;
+    width: 30%;
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 85%;
   }
 
   div.a-beer-container {
