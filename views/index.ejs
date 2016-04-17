@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Taming of The Brew</title>
+    <title>Taming Of The Brew</title>
+    <link rel="icon" href="/img/beerIcon.gif">
     <link rel="stylesheet" href="/css/styles.css">
     <meta name=viewport content="width=600">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -11,13 +12,13 @@
   <body>
 
     <center>
-      <h1>Taming of The Brew</h1>
+      <h1>Taming Of The Brew</h1>
       <nav>
-        <a href="#" title="Sign Up">Sign Up</a>
+        <button type="signup"><a href="#" title="Sign Up">Sign Up</a></button>
       </nav>
 
       <h2 class="instruct">What'll it be?</h2>
-        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most and enjoy your perfect brew.</p>
+        <p>Choose your beer preferences with the chart below. <br/>Select the flavors you love most to enjoy the perfect brew.</p>
 
           <!-- flavor wheel  -->
 
@@ -28,16 +29,16 @@
 
 
       <div data-role="main" class="ui-content">
-      <form method="post">
-      <ul>
+        <form method="post">
+        <ul>
 
         <!-- ui-slider-handle ui-btn ui-shadow -->
 
-        <li><label for="crisp">Crisp:</label>
+          <li><label for="crisp">Crisp:</label>
           <!-- <input type="range" data-show-value="true">
           <input type="range" data-popup-enabled="true"> -->
-          <input type="range" data-popup-enabled="true" name="crisp" id="crisp" value="5" min="0" max="10">
-        </li>
+            <input type="range" data-popup-enabled="true" name="crisp" id="crisp" value="5" min="0" max="10">
+          </li>
 
         <li><label for="hop">Hop:</label>
           <input type="range" name="hop" id="hop" value="5" min="0" max="10">
@@ -75,13 +76,10 @@
         </li>
 
       </ul>
-        <button type="submit" data-inline="true">Brew Me</button>
-
+      <button type="submit" data-inline="true">Brew Me</button>
       </form>
     </div>
   </div>
-
-
     </center>
 
 
@@ -94,8 +92,7 @@
 
     <!-- Results -->
     <center class="hidden">
-      <h2>Results</h2>
-      <h3>Based on that criteria, we suggest the following:</h3>
+      <h2>Try one of these:</h2>
       <div class="beers-container"></div>
     </center>
 
