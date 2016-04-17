@@ -39,7 +39,8 @@ var notSlideyOne = {
       maxValue: 10,
       radians: 2 * Math.PI,
       opacityArea: 0.5,
-      color: d3.scale.category10()
+      color: d3.scale.ordinal()
+        .range(["#ED6939", "#ED6939"])
     };
     if('undefined' !== typeof options){
       for(var i in options){

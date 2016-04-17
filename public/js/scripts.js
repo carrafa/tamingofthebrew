@@ -8,26 +8,10 @@ $(document).ready(function(){
   $("#scroll").click(function() {
       $('html,body').animate({
           scrollTop: $("#second").offset().top},
-          1500);
+          1000);
   });
+});
 
-})
-
-
-
-//var tasteMap = {
-  //crisp: 5,
-  //hop: 5,
-  //nut: 5,
-  //fruit: 5,
-  //cream: 5,
-  //dry: 5,
-  //sweet: 5,
-  //bitter: 5,
-  //spicy: 5,
-  //sour: 5
-//};
-//
 var tasteMap = {};
 
 function compare(){
@@ -44,16 +28,16 @@ function compare(){
       for(var i = 0; i < 15; i++){
 
         var dd = [
-          {axis: "crisp", value: beers[i].taste['crisp'], order:0},
-          {axis: "hop", value: beers[i].taste['hop'], order:1},
-          {axis: "nut", value: beers[i].taste['nut'], order:2},
-          {axis: "fruit", value: beers[i].taste['fruit'], order:3},
-          {axis: "cream", value: beers[i].taste['cream'], order:4},
-          {axis: "dry", value: beers[i].taste['dry'], order:5},
-          {axis: "sweet", value: beers[i].taste['sweet'], order:6},
-          {axis: "bitter", value: beers[i].taste['bitter'], order:7},
-          {axis: "spicy", value: beers[i].taste['spicy'], order:8},
-          {axis: "sour", value: beers[i].taste['sour'], order:9}
+          {axis: "crisp", value: beers[i].taste.crisp, order:0},
+          {axis: "hop", value: beers[i].taste.hop, order:1},
+          {axis: "nut", value: beers[i].taste.nut, order:2},
+          {axis: "fruit", value: beers[i].taste.fruit, order:3},
+          {axis: "cream", value: beers[i].taste.cream, order:4},
+          {axis: "dry", value: beers[i].taste.dry, order:5},
+          {axis: "sweet", value: beers[i].taste.sweet, order:6},
+          {axis: "bitter", value: beers[i].taste.bitter, order:7},
+          {axis: "spicy", value: beers[i].taste.spicy, order:8},
+          {axis: "sour", value: beers[i].taste.sour, order:9}
         ];
 
 
@@ -61,11 +45,15 @@ function compare(){
         notSlideyOne.draw('#a' + beers[i]._id, dd, 300, 300);
      }
      setMoreInfoHandler();
+
+    $('.beer-list-head').text("BEER LIST");;
     }
   });
+
 }
 
-$('#submit-button').on('click', function(){
+$('#beer-me').on('click', function(){
+
    compare();
 });
 
@@ -82,8 +70,14 @@ function moreInfoButton(search){
     method: 'get',
     url: '/api/beers/' + search,
     success: function(response){
-      var beer = response.beer.body.response.beer
-      renderMoreInfo(beer);
+      if(response.beer.body){
+        var beer = response.beer.body.response.beer
+      }else{
+        var beer = response.beer;
+      }
+      renderMoreInfo(beer, function(){
+        renderMap(latLng, beer.mapId);
+      });
     },
     error: function(err){
       console.log("ERROR: ", err);
@@ -91,10 +85,10 @@ function moreInfoButton(search){
   });
 }
 
-function renderMoreInfo(beer){
+function renderMoreInfo(beer, callback){
   var source = $('#moreInfo-template').html();
   var context = beer;
-  beer.mapId = 'map' + beer._id;
+  beer.mapId = 'map' + beer.bid;
   var template = Handlebars.compile(source);
   var $beerInfo = template(context);
   var $modal = $('<div>');
@@ -103,12 +97,17 @@ function renderMoreInfo(beer){
   $('body').append($modal);
   var inst = $modal.remodal();
   inst.open();
+  var latLng = {
+    lat: beer.brewery.location.lat,
+    lng: beer.brewery.location.lng
+  }
+
+  callback(latLng, beer.mapId);
 }
 
 $('input').on('input',  function(){
   var value = $(this).val();
   var name = $(this).attr('name');
-  // console.log($(this)[0].id + value);
   tasteMap[name] = value;
   renderTheWheelThing(tasteMap);
 });
@@ -119,14 +118,14 @@ function renderABeer(beer){
   var context = beer;
   var template = Handlebars.compile(source);
   var $beerContainer = template(context);
+
   $('#beers-holster').append($beerContainer);
 }
 
 RadarChartSlidey.draw('#chart-area', d, 520, 520);
 
-var map;
-
 function renderMap(latLng, id){
+  var map;
   map = new google.maps.Map(document.getElementById('map' + id), {
     center: {lat: latLng.lat, lng: latLng.lng},
     zoom: 8
