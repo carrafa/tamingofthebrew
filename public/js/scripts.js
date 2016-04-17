@@ -103,7 +103,7 @@ function renderABeer(beer){
   var context = beer;
   var template = Handlebars.compile(source);
   var $beerContainer = template(context);
-  $('#beers-container').append($beerContainer);
+  $('#beers-holster').append($beerContainer);
 }
 
 RadarChartSlidey.draw('#chart-area', d, 520, 520);
