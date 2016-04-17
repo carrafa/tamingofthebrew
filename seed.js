@@ -25,6 +25,8 @@ function Beer(name){
   }
 }
 
+var beerArray = [];
+
 
 var beers = [
   {name: "Guiness",
