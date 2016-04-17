@@ -13,6 +13,21 @@ $(document).ready(function(){
 
 })
 
+
+
+//var tasteMap = {
+  //crisp: 5,
+  //hop: 5,
+  //nut: 5,
+  //fruit: 5,
+  //cream: 5,
+  //dry: 5,
+  //sweet: 5,
+  //bitter: 5,
+  //spicy: 5,
+  //sour: 5
+//};
+//
 var tasteMap = {};
 
 function compare(){
@@ -27,7 +42,7 @@ function compare(){
       var beers = response.beers;
       console.log(beers);
       for(var i = 0; i < 15; i++){
-   
+
         var dd = [
           {axis: "crisp", value: beers[i].taste['crisp'], order:0},
           {axis: "hop", value: beers[i].taste['hop'], order:1},
@@ -42,7 +57,7 @@ function compare(){
         ];
 
      renderABeer(beers[i]);
-        notSlideyOne.draw('#a' + beers[i]._id, dd, 300, 300); 
+        notSlideyOne.draw('#a' + beers[i]._id, dd, 300, 300);
       }
     }
   });
@@ -78,7 +93,7 @@ function renderMoreInfo(beer){
   var $abv = $('<div>').text(beer.beer_abv);
   var $style = $('<div>').text(beer.beer_style);
   var $description = $('<div>').text(beer.beer_description);
-  
+
 
   $modal.append($name, $label, $abv, $style, $description);
   $('body').append($modal);

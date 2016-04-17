@@ -5,11 +5,44 @@ body{
 .container{
   width: 80%;
   margin-left: 10%;
+
+}
+
+.brewcontainer {
+    height: 0;
+    width: 55%;    /* specify any width you want (a percentage value, basically) */
+    margin-left:32%;
+    margin-top: -19%;
+    /* apply a padding using the following formula */
+    /* this formula makes sure the aspect ratio of the container equals that of the svg graphic */
+    position: absolute;    /* create positioning context for svg */
+}
+
+path.brew{
+  -webkit-animation: dash 4s linear forwards;
+  animation: dash 4s linear forwards;
+  animation-delay: 1.5s;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+
+}
+
+@-webkit-keyframes dash {
+
+  to {
+      stroke-dashoffset: 0;
+    }
+}
+@keyframes dash {
+
+  to {
+      stroke-dashoffset: 0;
+    }
 }
 
 #first{
   width: 100%;
-  height: 870px;
+  height: 800px;
   top: 0;
   left: 0;
   position: absolute;
@@ -18,62 +51,60 @@ body{
 }
 
 #scroll{
+  position: relative;
   margin-left: 45%;
-  margin-top: 28%;
-  width:7%;
+  margin-top: 22%;
+  width: 7%;
+  fill: white;
 }
-
-
 
 #scroll:hover{
   cursor: pointer;
-    fill: pink;
+  fill: #2D2A73;
 }
 
 svg{
-  margin-top: -40px;
+  margin-top: 0px;
   padding-top: 2%;
 }
 
 
 #second {
-    width: 100%;
-    height:900px;
-    left: 0;
-    margin-top: 840px;
-    background: rgb(244, 241, 231);
-    position: absolute;
+  width: 100%;
+  height: 850px;
+  left: 0;
+  margin-top: 780px;
+  background: rgb(244, 241, 231);
+  position: absolute;
 }
 
-#header{
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background:repeating-linear-gradient(
-  -45deg,
-  white,
-  white 5px,
-  black 5px,
-  black 10px
-);
-  position: absolute;
-  z-index: -1;
+#left {
+  width: 60%;
+  /*position: fixed;*/
+}
 
+#beers-container{
+  width: 40%;
+  overflow: scroll;
+}
+
+.section{
+  display: inline-block;
 }
 
 #main-title{
   font-family: 'Pacifico', cursive;
-  font-size: 4.5em;
-  color: #F94700;
-  animation-duration: 1.5s;
+  margin-top: 18%;
+  font-size: 3.5em;
+  color: white;
+  animation-duration: 2s;
   animation-name: slidein;
 }
 
 
 @keyframes slidein {
   from {
-    margin-left: 100%;
+    margin-left: 150%;
     width: 300%;
   }
 
