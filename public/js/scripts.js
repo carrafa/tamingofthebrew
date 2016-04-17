@@ -34,17 +34,18 @@ $('#submit-button').on('click', function(){
    compare();
 });
 
-function addDeliverySearchHandler(div){
+function moreInfoHandler(div){
   var search = div.attr('search').toLowerCase();
   div.on('click', function(){
-    deliverySearch(search);
+    moreInfoButton(search);
   });
 }
 
-function deliverySearch(search){
+function moreInfoButton(search){
+  search.replace(' ', '+');
   $.ajax({
     method: 'get',
-url: DELIVERY_API  + '&name=' + search,
+    url: '/api/beers/' + search,
     success: function(response){
       console.log(response);
     }
@@ -71,7 +72,7 @@ function renderABeer(beer){
   var $ibu = $('<div>').addClass('ibu').text(beer.nutritional_value.ibu);
   var $calories = $('<div>').addClass('calories').text(beer.nutritional_value.calories);
   var $delivery = $('<button>').addClass('delivery').attr('search', beer.name).text('get this delivered!');
-  addDeliverySearchHandler($delivery);
+  moreInfoHandler($delivery);
 
   $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $delivery);
   $('.beers-container').append($beerContainer);
