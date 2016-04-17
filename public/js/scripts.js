@@ -3,17 +3,17 @@ console.log('to beer or not to beer');
 var DELIVERY_API = "https://www.delivery.com/api/data/search?search_type=alcohol&address=1006+Avenue+of+the+Americas,10018&order_time=ASAP&order_type=delivery&client_id=brewhacks2016&section=beer";
 
 var tasteMap = {
-  crisp: 10,
-  hop: 8,
-  nut: 1,
-  fruit: 3,
+  crisp: 5,
+  hop: 5,
+  nut: 5,
+  fruit: 5,
   cream: 5,
   dry: 5,
-  sweet: 4,
-  bitter: 1,
-  spicy: 8,
-  sour: 7
-}
+  sweet: 5,
+  bitter: 5,
+  spicy: 5,
+  sour: 5
+};
 
 function compare(){
   $.ajax({
@@ -34,19 +34,21 @@ $('#submit-button').on('click', function(){
    compare();
 });
 
-function addDeliverySearchHandler(div){
+function moreInfoHandler(div){
   var search = div.attr('search').toLowerCase();
   div.on('click', function(){
-    deliverySearch(search);
+    moreInfoButton(search);
   });
 }
 
-function deliverySearch(search){
+function moreInfoButton(search){
+  search.replace(' ', '+');
   $.ajax({
     method: 'get',
-url: DELIVERY_API  + '&name=' + search,
+    url: '/api/beers/' + search,
     success: function(response){
-      console.log(response);
+      var beer = response.beer.body.response.beer
+      console.log(beer);
     }
   });
 }
@@ -70,12 +72,11 @@ function renderABeer(beer){
   var $abv = $('<div>').addClass('abv').text(beer.nutritional_value.abv);
   var $ibu = $('<div>').addClass('ibu').text(beer.nutritional_value.ibu);
   var $calories = $('<div>').addClass('calories').text(beer.nutritional_value.calories);
-  var $delivery = $('<button>').addClass('delivery').attr('search', beer.name).text('get this delivered!');
-  addDeliverySearchHandler($delivery);
+  var $info = $('<button>').addClass('info').attr('search', beer.name).text('get more info!');
+  moreInfoHandler($info);
 
-  $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $delivery);
+  $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $info);
   $('.beers-container').append($beerContainer);
 }
 
-
-RadarChartSlidey.draw('#chart-area', d, 600, 600)
+RadarChartSlidey.draw('#chart-area', d, 600, 600);
