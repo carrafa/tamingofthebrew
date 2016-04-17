@@ -39,7 +39,7 @@ function seedDb(){
   }
 }
 
-clearDb();
+//clearDb();
 seedDb();
 setTimeout(function(){
   mongoose.disconnect();

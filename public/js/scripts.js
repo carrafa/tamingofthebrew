@@ -13,21 +13,6 @@ $(document).ready(function(){
 
 })
 
-
-
-//var tasteMap = {
-  //crisp: 5,
-  //hop: 5,
-  //nut: 5,
-  //fruit: 5,
-  //cream: 5,
-  //dry: 5,
-  //sweet: 5,
-  //bitter: 5,
-  //spicy: 5,
-  //sour: 5
-//};
-//
 var tasteMap = {};
 
 function compare(){
