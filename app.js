@@ -26,7 +26,7 @@ var usersApi = require('./routes/api/users.js');
 app.use('/api/users', usersApi);
 
 // listen!
-var port = 8080;
+var port = parseInt(process.env.PORT) || 8080;
 app.listen(port, function(){
   console.log('the taming of the brew is up on port ', port);
 });
