@@ -41,9 +41,10 @@ function compare(){
           {axis: "sour", value: beers[i].taste['sour'], order:9}
         ];
 
-     renderABeer(beers[i]);
+        renderABeer(beers[i]);
         notSlideyOne.draw('#a' + beers[i]._id, dd, 300, 300); 
-      }
+     }
+     setMoreInfoHandler();
     }
   });
 }
@@ -52,9 +53,9 @@ $('#submit-button').on('click', function(){
    compare();
 });
 
-function moreInfoHandler(div){
-  var search = div.attr('search').toLowerCase();
-  div.on('click', function(){
+function setMoreInfoHandler(){
+  $('.info').click(function(){
+    var search = $(this).attr('search');
     moreInfoButton(search);
   });
 }
@@ -72,15 +73,12 @@ function moreInfoButton(search){
 }
 
 function renderMoreInfo(beer){
+  var source = $('#moreInfo-template').html();
+  var context = beer;
+  var template = Handlebars.compile(source); 
+  var $beerInfo = template(context);
   var $modal = $('<div>');
-  var $name = $('<h1>').text(beer.name);
-  var $label = $('<img>').attr('src', beer.beer_label);
-  var $abv = $('<div>').text(beer.beer_abv);
-  var $style = $('<div>').text(beer.beer_style);
-  var $description = $('<div>').text(beer.beer_description);
-  
-
-  $modal.append($name, $label, $abv, $style, $description);
+  $modal.append($beerInfo);
   $('body').append($modal);
   var inst = $modal.remodal();
   inst.open();
@@ -94,27 +92,12 @@ $('input').on('input',  function(){
   renderTheWheelThing(tasteMap);
 });
 
-function renderTheWheelThing(tasteMap){
-
-}
-
 function renderABeer(beer){
-
-  var $beerContainer = $('<div>').addClass('beer-container');
-  var $beerName = $('<div>').addClass('beer-name').text(beer.name);
-  var $brewery = $('<div>').addClass('brewery').text(beer.brewery);
-  var $abv = $('<div>').addClass('abv').text(beer.nutritional_value.abv);
-  var $ibu = $('<div>').addClass('ibu').text(beer.nutritional_value.ibu);
-  var $calories = $('<div>').addClass('calories').text(beer.nutritional_value.calories);
-  var $info = $('<button>').addClass('info').attr('search', beer.name).text('get more info!');
-  moreInfoHandler($info);
-
-  var $tasteMapDiv = $('<span>');
-
-  $tasteMapDiv.attr('id', 'a' + beer._id);
-
-  $beerContainer.append($beerName, $brewery, $abv, $ibu, $calories, $info, $tasteMapDiv);
-
+  var source = $('#beer-template').html();
+  beer.tasteMapId = "a" + beer._id;
+  var context = beer;
+  var template = Handlebars.compile(source); 
+  var $beerContainer = template(context);
   $('.beers-container').append($beerContainer);
 }
 
