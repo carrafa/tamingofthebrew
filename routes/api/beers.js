@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Beer = require('../../models/beer.js');
 var beerCompare = require('../../lib/beerCompare');
+var untappd = require('../../lib/untappd');
 
 router.get('/', function(req, res){
   Beer.find({}, function(err, dbBeers){
@@ -19,5 +20,15 @@ router.get('/compare', function(req, res){
     });
   });
 });
+
+router.get('/:beer', function(req, res){
+  var search = req.params.beer;
+  untappd.getBeer(search, function(data){
+    res.json({
+      beer: data
+    });
+  });
+});
+
 
 module.exports = router;

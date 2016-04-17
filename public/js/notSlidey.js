@@ -1,5 +1,5 @@
-var sierra = {
-bitter: 6,
+var sierraNotSlidey = {
+bitter: 5,
 cream: 8,
 crisp: 10,
 dry: 3,
@@ -12,17 +12,17 @@ sweet: 5
 }
 
 
-var d = [
-         {axis: "crisp", value: sierra['crisp'], order:0},
-         {axis: "hop", value: sierra['hop'], order:1},
-         {axis: "nut", value: sierra['nut'], order:2},
-         {axis: "fruit", value: sierra['fruit'], order:3},
-         {axis: "cream", value: sierra['cream'], order:4},
-         {axis: "dry", value: sierra['dry'], order:5},
-         {axis: "sweet", value: sierra['sweet'], order:6},
-         {axis: "bitter", value: sierra['bitter'], order:7},
-         {axis: "spicy", value: sierra['spicy'], order:8},
-         {axis: "sour", value: sierra['sour'], order:9}
+var dd = [
+         {axis: "crisp", value: sierraNotSlidey['crisp'], order:0},
+         {axis: "hop", value: sierraNotSlidey['hop'], order:1},
+         {axis: "nut", value: sierraNotSlidey['nut'], order:2},
+         {axis: "fruit", value: sierraNotSlidey['fruit'], order:3},
+         {axis: "cream", value: sierraNotSlidey['cream'], order:4},
+         {axis: "dry", value: sierraNotSlidey['dry'], order:5},
+         {axis: "sweet", value: sierraNotSlidey['sweet'], order:6},
+         {axis: "bitter", value: sierraNotSlidey['bitter'], order:7},
+         {axis: "spicy", value: sierraNotSlidey['spicy'], order:8},
+         {axis: "sour", value: sierraNotSlidey['sour'], order:9}
         ];
 
 
@@ -49,8 +49,8 @@ var notSlideyOne = {
       }
     }
 
-    cfg.maxValue = Math.max(cfg.maxValue, d3.max(d.map(function(o){return o.value})));
-    var allAxis = (d.map(function(i, j){return i.axis}));
+    cfg.maxValue = Math.max(cfg.maxValue, d3.max(dd.map(function(o){return o.value})));
+    var allAxis = (dd.map(function(i, j){return i.axis}));
     var total = allAxis.length;
     var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
 
