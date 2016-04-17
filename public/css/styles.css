@@ -32,7 +32,7 @@ body{
 
 svg{
   margin-top: -40px;
-  padding-top: 2%;
+  padding: 6%;
 }
 
 
@@ -91,6 +91,11 @@ svg{
 
 div#container {
   position: center;
+  position: relative;
+}
+
+div .beers-container {
+  position: absolute;
 }
 
 h2, h3, h4, p {
