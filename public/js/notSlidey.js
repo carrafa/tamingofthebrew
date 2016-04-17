@@ -26,7 +26,7 @@ var dd = [
         ];
 
 
-
+// Slidey Chart D3.js from: https://github.com/azole/d3-radar-chart-draggable/blob/master/demo.html
 var notSlideyOne = {
   draw: function(id, d, w, h){
     var cfg = {
