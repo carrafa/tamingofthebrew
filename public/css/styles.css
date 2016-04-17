@@ -59,7 +59,7 @@ a:hover {
 }
 
 circle:hover{
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 
