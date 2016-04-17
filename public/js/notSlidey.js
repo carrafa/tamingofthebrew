@@ -28,11 +28,11 @@ var dd = [
 
 
 var notSlideyOne = {
-  draw: function(id, d, options){
+  draw: function(id, d, w, h){
     var cfg = {
       radius: 10,    // 點的半徑
-      w: 600,
-      h: 600,
+      w: w,
+      h: h,
       factor: 1,    // 框的縮放比例
       factorLegend: .85,
       levels: 10,    // 幾層框

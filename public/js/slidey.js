@@ -3,7 +3,7 @@
 var sierra = {
 bitter: 6,
 cream: 8,
-crisp: 10,
+crisp: 8,
 dry: 3,
 fruit: 6,
 hop: 5,
@@ -11,20 +11,20 @@ nut: 7,
 sour: 4,
 spicy: 2,
 sweet: 5
-}
+};
 
 
 var d = [
-         {axis: "crisp", value: sierra['crisp'], order:0},
-         {axis: "hop", value: sierra['hop'], order:1},
-         {axis: "nut", value: sierra['nut'], order:2},
-         {axis: "fruit", value: sierra['fruit'], order:3},
-         {axis: "cream", value: sierra['cream'], order:4},
-         {axis: "dry", value: sierra['dry'], order:5},
-         {axis: "sweet", value: sierra['sweet'], order:6},
-         {axis: "bitter", value: sierra['bitter'], order:7},
-         {axis: "spicy", value: sierra['spicy'], order:8},
-         {axis: "sour", value: sierra['sour'], order:9}
+         {axis: "crisp", value: sierra.crisp, order:0},
+         {axis: "hop", value: sierra.hop, order:1},
+         {axis: "nut", value: sierra.nut, order:2},
+         {axis: "fruit", value: sierra.fruit, order:3},
+         {axis: "cream", value: sierra.cream, order:4},
+         {axis: "dry", value: sierra.dry, order:5},
+         {axis: "sweet", value: sierra.sweet, order:6},
+         {axis: "bitter", value: sierra.bitter, order:7},
+         {axis: "spicy", value: sierra.spicy, order:8},
+         {axis: "sour", value: sierra.sour, order:9}
         ];
 
 
