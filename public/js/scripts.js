@@ -10,24 +10,8 @@ $(document).ready(function(){
           scrollTop: $("#second").offset().top},
           1500);
   });
+});
 
-})
-
-
-
-//var tasteMap = {
-  //crisp: 5,
-  //hop: 5,
-  //nut: 5,
-  //fruit: 5,
-  //cream: 5,
-  //dry: 5,
-  //sweet: 5,
-  //bitter: 5,
-  //spicy: 5,
-  //sour: 5
-//};
-//
 var tasteMap = {};
 
 function compare(){
@@ -44,16 +28,16 @@ function compare(){
       for(var i = 0; i < 15; i++){
 
         var dd = [
-          {axis: "crisp", value: beers[i].taste['crisp'], order:0},
-          {axis: "hop", value: beers[i].taste['hop'], order:1},
-          {axis: "nut", value: beers[i].taste['nut'], order:2},
-          {axis: "fruit", value: beers[i].taste['fruit'], order:3},
-          {axis: "cream", value: beers[i].taste['cream'], order:4},
-          {axis: "dry", value: beers[i].taste['dry'], order:5},
-          {axis: "sweet", value: beers[i].taste['sweet'], order:6},
-          {axis: "bitter", value: beers[i].taste['bitter'], order:7},
-          {axis: "spicy", value: beers[i].taste['spicy'], order:8},
-          {axis: "sour", value: beers[i].taste['sour'], order:9}
+          {axis: "crisp", value: beers[i].taste.crisp, order:0},
+          {axis: "hop", value: beers[i].taste.hop, order:1},
+          {axis: "nut", value: beers[i].taste.nut, order:2},
+          {axis: "fruit", value: beers[i].taste.fruit, order:3},
+          {axis: "cream", value: beers[i].taste.cream, order:4},
+          {axis: "dry", value: beers[i].taste.dry, order:5},
+          {axis: "sweet", value: beers[i].taste.sweet, order:6},
+          {axis: "bitter", value: beers[i].taste.bitter, order:7},
+          {axis: "spicy", value: beers[i].taste.spicy, order:8},
+          {axis: "sour", value: beers[i].taste.sour, order:9}
         ];
 
 
