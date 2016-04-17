@@ -196,6 +196,10 @@ button:hover {
     background-color: #ED6939;
   }
 
+  #main-title {
+    padding-bottom: 16%;
+  }
+
   div#chart {
     margin-top: 60%;
   }
@@ -206,7 +210,8 @@ button:hover {
 
   #second {
     margin-top: 1260px;
-    padding: 30px;
+    padding-top: 45%;
+    padding-bottom: 30%;
   }
 
   #header {
@@ -216,9 +221,9 @@ button:hover {
 
   svg {
     margin-top: -15px;
-    padding-top: 5%;
+    padding-top: 7%;
     margin-bottom: 7%;
-    margin-right: 10%;
+    margin-left: 6%;
   }
 
   h1, h2, h3, h4, p {
@@ -241,6 +246,11 @@ button:hover {
 
   div.beer-name, .brewery, .abv, .ibu, .calories {
     font-size: 30px;
+    padding: 5px;
+  }
+
+  .legend {
+    padding-right: 2%;
   }
 
 }
@@ -261,11 +271,12 @@ button:hover {
 
   #second {
     margin-top: 1260px;
-    padding: 30px;
+    padding-top: 45%;
+    padding-bottom: 30%;
   }
 
-  #first {
-    /*height: 900px;*/
+  #main-title {
+    padding-bottom: 16%;
   }
 
   h1, h2, h3, h4, p {
@@ -286,13 +297,14 @@ button:hover {
 
   svg {
     margin-top: -15px;
-    padding-top: 5%;
+    padding-top: 7%;
     margin-bottom: 7%;
-    margin-right: 10%;
+    margin-left: 6%;
   }
 
   div.beer-name, .brewery, .abv, .ibu, .calories {
     font-size: 30px;
+    padding: 5px;
   }
 
 }
