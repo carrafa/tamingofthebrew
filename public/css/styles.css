@@ -9,6 +9,26 @@ body{
 
 }
 
+#instructions{
+  display: none;
+  font-family: 'Pacifico', cursive;
+  color:white;
+  margin-top: 15%;
+  font-size: 2em;
+  text-align: center;
+  -webkit-animation:fadein 2s;
+  /*animation-delay: 3s;*/
+}
+
+@-webkit-keyframes fadein {
+from {
+opacity:0;
+}
+to {
+opacity:1;
+}
+}
+
 .brewcontainer {
     height: 0;
     width: 55%;    /* specify any width you want (a percentage value, basically) */
@@ -75,8 +95,7 @@ path.brew{
 
 #scroll{
   position: relative;
-  margin-left: 45%;
-  margin-top: 22%;
+  margin-top: 2%;
   width: 7%;
   fill: white;
 }
@@ -209,8 +228,13 @@ button {
   cursor: pointer;
   font-size: 25px;
   -webkit-transition: all 1s;
-  background-color: white;
+  border: 0;
+  border-radius: 5%;
+  background-color: #ED6939;
+  color: rgb(244, 241, 231);
 }
+
+
 
 button:hover {
   color: rgba(93, 255, 243, 0.76);
