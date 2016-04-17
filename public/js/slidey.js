@@ -61,7 +61,8 @@ var RadarChartSlidey = {
       maxValue: 10,
       radians: 2 * Math.PI,
       opacityArea: 0.5,
-      color: d3.scale.category10()
+      color: d3.scale.ordinal()
+        .range(["#2D2A73", "#2D2A73"])
     };
     if('undefined' !== typeof options){
       for(var i in options){
@@ -154,17 +155,17 @@ var RadarChartSlidey = {
                 .enter()
                 .append("polygon")
                 .attr("class", "radar-chart-serie0")
-                .style("stroke-width", "2px")
-                .style("stroke", cfg.color(0))
+                .style("stroke-width", "4px")
+                .style("stroke", cfg.color(1))
                 .on('mouseover', function (d){
                   z = "polygon."+d3.select(this).attr("class");
-                  g.selectAll("polygon").transition(200).style("fill-opacity", 0.1);
+                  g.selectAll("polygon").transition(200).style("fill-opacity", 0.5);
                   g.selectAll(z).transition(200).style("fill-opacity", 0.7);
                 })
                 .on('mouseout', function(){
                   g.selectAll("polygon").transition(200).style("fill-opacity", cfg.opacityArea);
                 })
-                .style("fill", function(j, i){return cfg.color(0);})
+                .style("fill", function(j, i){return cfg.color(2);})
                 .style("fill-opacity", cfg.opacityArea);
     }
 
@@ -193,7 +194,7 @@ var RadarChartSlidey = {
           return cfg.h/2*(1-(Math.max(j.value, 0)/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total));
         })
         .attr("data-id", function(j){return j.axis;})
-        .style("fill", cfg.color(0)).style("fill-opacity", 0.9)
+        .style("fill", cfg.color(1)).style("fill-opacity", 0.8)
         .on('mouseover', function (d){
                     newX =  parseFloat(d3.select(this).attr('cx')) - 10;
                     newY =  parseFloat(d3.select(this).attr('cy')) - 5;
