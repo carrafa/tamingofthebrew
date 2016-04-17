@@ -5,12 +5,26 @@ var DELIVERY_API = "https://www.delivery.com/api/data/search?search_type=alcohol
 $(document).ready(function(){
   $(this).scrollTop(0);
 
+  setTimeout(fillLetters, 3200);
+  setTimeout(function(){
+    $('#instructions').toggle()
+  }, 4000)
+
   $("#scroll").click(function() {
       $('html,body').animate({
           scrollTop: $("#second").offset().top},
           1000);
+
+
   });
 });
+
+
+
+function fillLetters(){
+  $('.brew').css("fill", '#2D2A73');
+  $('.brew').css('stroke', 'white')
+}
 
 var tasteMap = {};
 
