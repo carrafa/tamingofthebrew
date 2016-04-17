@@ -22,9 +22,6 @@ app.use('/', indexRouter);
 var beerApi = require('./routes/api/beers.js');
 app.use('/api/beers', beerApi);
 
-var usersApi = require('./routes/api/users.js');
-app.use('/api/users', usersApi);
-
 // listen!
 var port = parseInt(process.env.PORT) || 8080;
 app.listen(port, function(){
